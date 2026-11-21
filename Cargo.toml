@@ -1,0 +1,35 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/plotflora-core",
+    "crates/plotflora-data",
+    "crates/plotflora-app",
+    "crates/plotflora-catalog-builder",
+]
+
+[workspace.package]
+version = "1.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "GPL-3.0-or-later"
+authors = ["ChatCarbo"]
+
+[workspace.dependencies]
+plotflora-core = { path = "crates/plotflora-core", features = ["serde"] }
+plotflora-data = { path = "crates/plotflora-data" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tempfile = "3"
+ureq = { version = "2", features = ["json"] }
+dirs = "5"
+eframe = "0.29"
+rfd = "0.15"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp"] }
+calamine = "0.26"
+# calamine 0.26 ne compile pas avec zip >= 2.6 (ZipFile devenu générique) : version bloquée.
+zip = { version = ">=2.1, <2.3", default-features = false }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

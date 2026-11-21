@@ -1,0 +1,66 @@
+# Espèces de départ du catalogue embarqué (un nom latin par ligne).
+# Les espèces déjà présentes dans plants_catalog.seed.json sont ignorées.
+Abelia × grandiflora
+Achillea millefolium
+Ajuga reptans
+Alchemilla mollis
+Aster amellus
+Berberis thunbergii
+Buddleja davidii
+Buxus sempervirens
+Calluna vulgaris
+Campanula portenschlagiana
+Carpinus betulus
+Ceanothus thyrsiflorus
+Cercis siliquastrum
+Choisya ternata
+Cistus × purpureus
+Corylus avellana
+Cotinus coggygria
+Crataegus monogyna
+Deutzia gracilis
+Erigeron karvinskianus
+Escallonia rubra
+Euonymus europaeus
+Fagus sylvatica
+Ficus carica
+Forsythia × intermedia
+Fragaria vesca
+Gaura lindheimeri
+Helleborus orientalis
+Hemerocallis fulva
+Heuchera micrantha
+Hibiscus syriacus
+Hosta plantaginea
+Ilex aquifolium
+Lagerstroemia indica
+Ligustrum vulgare
+Lonicera periclymenum
+Mahonia aquifolium
+Nepeta × faassenii
+Olea europaea
+Origanum vulgare
+Osmanthus × burkwoodii
+Parthenocissus quinquefolia
+Perovskia atriplicifolia
+Philadelphus coronarius
+Photinia × fraseri
+Pittosporum tobira
+Prunus avium
+Pyracantha coccinea
+Ribes rubrum
+Rosa rugosa
+Rosmarinus officinalis
+Rudbeckia fulgida
+Sambucus nigra
+Sedum spectabile
+Spiraea japonica
+Syringa vulgaris
+Taxus baccata
+Thymus vulgaris
+Trachelospermum jasminoides
+Viburnum opulus
+Viburnum tinus
+Vinca minor
+Weigela florida
+Wisteria sinensis

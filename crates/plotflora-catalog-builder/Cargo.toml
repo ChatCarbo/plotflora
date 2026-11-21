@@ -1,0 +1,16 @@
+[package]
+name = "plotflora-catalog-builder"
+description = "Génère le catalogue embarqué et l'index EIVE de PlotFlora (outil développeur)."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+plotflora-core.workspace = true
+plotflora-data.workspace = true
+serde_json.workspace = true
+calamine.workspace = true
+zip.workspace = true # contrainte de version pour calamine, voir Cargo.toml racine

@@ -1,0 +1,17 @@
+[package]
+name = "plotflora-data"
+description = "Fichiers, catalogue, cache et sources en ligne (Wikidata, Wikipédia, Commons) de PlotFlora."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+plotflora-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tempfile.workspace = true
+ureq.workspace = true
+dirs.workspace = true

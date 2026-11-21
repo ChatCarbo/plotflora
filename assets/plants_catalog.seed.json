@@ -1,0 +1,6203 @@
+{
+  "schema_version": "1.1.0",
+  "plants": [
+    {
+      "id": "amelanchier_lamarckii",
+      "common_name": "Amélanchier du Canada",
+      "latin_name": "Amelanchier lamarckii",
+      "cultivar": null,
+      "category": "shrub",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -25,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "high"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "sandy",
+          "clay"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 4.5,
+        "mature_spread_m": 3.5,
+        "planting_spacing_m": null,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental",
+          "edible_fruit",
+          "pollinator",
+          "hedge"
+        ],
+        "flowering_months": [
+          4,
+          5
+        ],
+        "interest_seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "flower_color": "white",
+        "autumn_color": "orange_red"
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "low",
+        "pruning_months": [
+          2,
+          3
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "Floraison printanière blanche, petits fruits comestibles, belles couleurs d'automne.",
+      "tags": [
+        "4_saisons",
+        "oiseaux",
+        "facile"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "acer_palmatum",
+      "common_name": "Érable du Japon",
+      "latin_name": "Acer palmatum",
+      "cultivar": null,
+      "category": "tree",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -18,
+        "drought_tolerance": "low",
+        "wind_tolerance": "low"
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade",
+          "light_shade"
+        ],
+        "tolerated": [
+          "full_sun"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "humus"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 4.0,
+        "mature_spread_m": 4.0,
+        "planting_spacing_m": null,
+        "growth_rate": "slow",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental"
+        ],
+        "flowering_months": [
+          4,
+          5
+        ],
+        "interest_seasons": [
+          "spring",
+          "autumn"
+        ],
+        "flower_color": "red_purple",
+        "autumn_color": "crimson"
+      },
+      "care": {
+        "maintenance_level": "medium",
+        "water_need": "medium",
+        "pruning_months": [
+          2,
+          3
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "À abriter des vents desséchants et du soleil brûlant d'après-midi dans les régions chaudes.",
+      "tags": [
+        "graphique",
+        "automne",
+        "ombre_claire"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "malus_domestica",
+      "common_name": "Pommier domestique",
+      "latin_name": "Malus domestica",
+      "cultivar": null,
+      "category": "tree",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -25,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "clay"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "neutral",
+          "alkaline",
+          "acid"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 5.0,
+        "mature_spread_m": 4.5,
+        "planting_spacing_m": null,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "edible_fruit",
+          "pollinator",
+          "ornamental",
+          "shade_provider"
+        ],
+        "flowering_months": [
+          4,
+          5
+        ],
+        "interest_seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "flower_color": "white_pink",
+        "autumn_color": "yellow"
+      },
+      "care": {
+        "maintenance_level": "medium",
+        "water_need": "low",
+        "pruning_months": [
+          12,
+          1,
+          2
+        ],
+        "non_toxic_pets": false,
+        "has_thorns": false
+      },
+      "notes": "Vérifier la pollinisation croisée selon la variété choisie ; pépins toxiques pour certains animaux.",
+      "tags": [
+        "verger",
+        "fruitier",
+        "pollinisateurs"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "prunus_lusitanica",
+      "common_name": "Laurier du Portugal",
+      "latin_name": "Prunus lusitanica",
+      "cultivar": null,
+      "category": "shrub",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "high"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "clay",
+          "chalky",
+          "sandy"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "neutral",
+          "alkaline",
+          "acid"
+        ],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 4.0,
+        "mature_spread_m": 3.0,
+        "planting_spacing_m": 0.8,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "evergreen",
+        "uses": [
+          "hedge",
+          "ornamental",
+          "pollinator"
+        ],
+        "flowering_months": [
+          6
+        ],
+        "interest_seasons": [
+          "spring",
+          "summer",
+          "autumn",
+          "winter"
+        ],
+        "flower_color": "white",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "low",
+        "pruning_months": [
+          8,
+          9
+        ],
+        "non_toxic_pets": false,
+        "has_thorns": false
+      },
+      "notes": "Excellente alternative persistante aux haies classiques, supporte bien la taille.",
+      "tags": [
+        "haie",
+        "persistant",
+        "brise_vue"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "hydrangea_quercifolia",
+      "common_name": "Hortensia à feuilles de chêne",
+      "latin_name": "Hydrangea quercifolia",
+      "cultivar": null,
+      "category": "shrub",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -20,
+        "drought_tolerance": "low",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade",
+          "light_shade"
+        ],
+        "tolerated": [
+          "full_sun"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "humus"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 1.8,
+        "mature_spread_m": 2.0,
+        "planting_spacing_m": null,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental"
+        ],
+        "flowering_months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "interest_seasons": [
+          "summer",
+          "autumn"
+        ],
+        "flower_color": "white",
+        "autumn_color": "burgundy"
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "medium",
+        "pruning_months": [
+          3
+        ],
+        "non_toxic_pets": false,
+        "has_thorns": false
+      },
+      "notes": "Très décoratif en été et à l'automne avec son feuillage pourpre.",
+      "tags": [
+        "mi_ombre",
+        "floraison_ete",
+        "automne"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "cornus_mas",
+      "common_name": "Cornouiller mâle",
+      "latin_name": "Cornus mas",
+      "cultivar": null,
+      "category": "shrub",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -25,
+        "drought_tolerance": "high",
+        "wind_tolerance": "high"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "chalky",
+          "loamy",
+          "clay"
+        ],
+        "drainage": [
+          "good",
+          "moderate",
+          "fast"
+        ],
+        "ph": [
+          "alkaline",
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 3.5,
+        "mature_spread_m": 3.0,
+        "planting_spacing_m": null,
+        "growth_rate": "slow",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental",
+          "pollinator",
+          "edible_fruit",
+          "hedge"
+        ],
+        "flowering_months": [
+          2,
+          3
+        ],
+        "interest_seasons": [
+          "winter",
+          "spring",
+          "summer"
+        ],
+        "flower_color": "yellow",
+        "autumn_color": "red_purple"
+      },
+      "care": {
+        "maintenance_level": "very_low",
+        "water_need": "very_low",
+        "pruning_months": [
+          2,
+          3
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "Floraison jaune très précoce dès la fin de l'hiver, précieux pour les premiers pollinisateurs.",
+      "tags": [
+        "calcaire",
+        "floraison_hiver",
+        "rustique"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "lavandula_angustifolia",
+      "common_name": "Lavande vraie",
+      "latin_name": "Lavandula angustifolia",
+      "cultivar": null,
+      "category": "perennial",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": "high",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [
+          "sandy",
+          "loamy",
+          "chalky"
+        ],
+        "drainage": [
+          "fast",
+          "good"
+        ],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.8,
+        "mature_spread_m": 0.9,
+        "planting_spacing_m": 0.5,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "evergreen",
+        "uses": [
+          "ornamental",
+          "pollinator",
+          "aromatic"
+        ],
+        "flowering_months": [
+          6,
+          7,
+          8
+        ],
+        "interest_seasons": [
+          "summer"
+        ],
+        "flower_color": "violet",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "very_low",
+        "pruning_months": [
+          8,
+          9
+        ],
+        "non_toxic_pets": false,
+        "has_thorns": false
+      },
+      "notes": "Redoute les sols lourds détrempés en hiver ; tailler en boule sans entrer dans le vieux bois.",
+      "tags": [
+        "soleil",
+        "sec",
+        "pollinisateurs",
+        "aromatique"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "echinacea_purpurea",
+      "common_name": "Échinacée pourpre",
+      "latin_name": "Echinacea purpurea",
+      "cultivar": null,
+      "category": "perennial",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -20,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "sandy",
+          "clay"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "neutral",
+          "alkaline",
+          "acid"
+        ],
+        "moisture": [
+          "normal",
+          "dry"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.9,
+        "mature_spread_m": 0.6,
+        "planting_spacing_m": 0.45,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental",
+          "pollinator"
+        ],
+        "flowering_months": [
+          7,
+          8,
+          9
+        ],
+        "interest_seasons": [
+          "summer",
+          "autumn"
+        ],
+        "flower_color": "pink_purple",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "low",
+        "pruning_months": [
+          3,
+          4,
+          5
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "Très attractive pour les abeilles et papillons ; laisser les capitules secs en hiver pour les oiseaux.",
+      "tags": [
+        "vivace",
+        "pollinisateurs",
+        "ete"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "geranium_macrorrhizum",
+      "common_name": "Géranium vivace à grosses racines",
+      "latin_name": "Geranium macrorrhizum",
+      "cultivar": null,
+      "category": "groundcover",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -23,
+        "drought_tolerance": "high",
+        "wind_tolerance": "high"
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade",
+          "light_shade"
+        ],
+        "tolerated": [
+          "full_sun",
+          "dense_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "clay",
+          "sandy",
+          "chalky"
+        ],
+        "drainage": [
+          "fast",
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "acid",
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.4,
+        "mature_spread_m": 0.7,
+        "planting_spacing_m": 0.35,
+        "growth_rate": "fast",
+        "root_system": "spreading"
+      },
+      "characteristics": {
+        "foliage": "semi_evergreen",
+        "uses": [
+          "groundcover",
+          "ornamental",
+          "pollinator",
+          "aromatic"
+        ],
+        "flowering_months": [
+          5,
+          6
+        ],
+        "interest_seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "flower_color": "pink_magenta",
+        "autumn_color": "red_orange"
+      },
+      "care": {
+        "maintenance_level": "very_low",
+        "water_need": "very_low",
+        "pruning_months": [
+          3
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "Couvre-sol très fiable qui limite les adventices et supporte l'ombre et la sécheresse.",
+      "tags": [
+        "couvre_sol",
+        "sans_entretien",
+        "ombre"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "hedera_helix",
+      "common_name": "Lierre grimpant",
+      "latin_name": "Hedera helix",
+      "cultivar": null,
+      "category": "climber",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -20,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "high"
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade",
+          "light_shade",
+          "dense_shade"
+        ],
+        "tolerated": [
+          "full_sun"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "clay",
+          "chalky",
+          "sandy"
+        ],
+        "drainage": [
+          "good",
+          "moderate",
+          "poor"
+        ],
+        "ph": [
+          "acid",
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "normal",
+          "moist",
+          "dry"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 8.0,
+        "mature_spread_m": 4.0,
+        "planting_spacing_m": null,
+        "growth_rate": "fast",
+        "root_system": "clinging"
+      },
+      "characteristics": {
+        "foliage": "evergreen",
+        "uses": [
+          "ornamental",
+          "groundcover",
+          "pollinator"
+        ],
+        "flowering_months": [
+          9,
+          10
+        ],
+        "interest_seasons": [
+          "autumn",
+          "winter",
+          "spring",
+          "summer"
+        ],
+        "flower_color": "green_yellow",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "medium",
+        "water_need": "very_low",
+        "pruning_months": [
+          3,
+          4,
+          5
+        ],
+        "non_toxic_pets": false,
+        "has_thorns": false
+      },
+      "notes": "À maîtriser par une taille annuelle pour éviter qu'il n'envahisse les façades ou toitures.",
+      "tags": [
+        "grimpante",
+        "persistant",
+        "ombre_dense"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "clematis_montana",
+      "common_name": "Clématite des montagnes",
+      "latin_name": "Clematis montana",
+      "cultivar": null,
+      "category": "climber",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -18,
+        "drought_tolerance": "low",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "humus"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 6.0,
+        "mature_spread_m": 3.5,
+        "planting_spacing_m": null,
+        "growth_rate": "fast",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental",
+          "pollinator"
+        ],
+        "flowering_months": [
+          5,
+          6
+        ],
+        "interest_seasons": [
+          "spring",
+          "summer"
+        ],
+        "flower_color": "pink_white",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "medium",
+        "water_need": "medium",
+        "pruning_months": [
+          6
+        ],
+        "non_toxic_pets": false,
+        "has_thorns": false
+      },
+      "notes": "Garder le pied à l'ombre et au frais, tout en laissant la végétation grimper vers la lumière.",
+      "tags": [
+        "grimpante",
+        "floraison_printemps",
+        "cloture"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "jasminum_nudiflorum",
+      "common_name": "Jasmin d'hiver",
+      "latin_name": "Jasminum nudiflorum",
+      "cultivar": null,
+      "category": "shrub",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "clay",
+          "sandy",
+          "chalky"
+        ],
+        "drainage": [
+          "good",
+          "moderate",
+          "fast"
+        ],
+        "ph": [
+          "neutral",
+          "alkaline",
+          "acid"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 3.0,
+        "mature_spread_m": 2.5,
+        "planting_spacing_m": null,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental",
+          "groundcover"
+        ],
+        "flowering_months": [
+          12,
+          1,
+          2,
+          3
+        ],
+        "interest_seasons": [
+          "winter",
+          "spring"
+        ],
+        "flower_color": "yellow",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "low",
+        "pruning_months": [
+          3,
+          4,
+          5
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "Arbuste sarmenteux (ne grimpe pas seul : à palisser). Rameaux verts et fleurs jaunes en plein hiver ; peut aussi s'utiliser en retombant ou couvre-sol.",
+      "tags": [
+        "hiver",
+        "grimpante",
+        "facile"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "salvia_officinalis",
+      "common_name": "Sauge officinale",
+      "latin_name": "Salvia officinalis",
+      "cultivar": null,
+      "category": "vegetable_herb",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": "high",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "sandy",
+          "loamy",
+          "chalky"
+        ],
+        "drainage": [
+          "fast",
+          "good"
+        ],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.7,
+        "mature_spread_m": 0.8,
+        "planting_spacing_m": 0.5,
+        "growth_rate": "medium",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "evergreen",
+        "uses": [
+          "aromatic",
+          "pollinator",
+          "ornamental",
+          "edible_leaf"
+        ],
+        "flowering_months": [
+          5,
+          6,
+          7
+        ],
+        "interest_seasons": [
+          "spring",
+          "summer"
+        ],
+        "flower_color": "violet_blue",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "very_low",
+        "pruning_months": [
+          3,
+          4,
+          5
+        ],
+        "non_toxic_pets": null,
+        "has_thorns": false
+      },
+      "notes": "Feuillage aromatique persistant ; préfère un sol drainant et peu humide en hiver.",
+      "tags": [
+        "aromate",
+        "sec",
+        "pollinisateurs"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": false,
+        "uncertain_fields": [
+          "care.non_toxic_pets"
+        ],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "rubus_fruticosus_thornless",
+      "common_name": "Mûrier sans épines",
+      "latin_name": "Rubus fruticosus",
+      "cultivar": null,
+      "category": "shrub",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -20,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "medium"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [
+          "loamy",
+          "clay",
+          "humus"
+        ],
+        "drainage": [
+          "good",
+          "moderate"
+        ],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 2.2,
+        "mature_spread_m": 2.5,
+        "planting_spacing_m": null,
+        "growth_rate": "fast",
+        "root_system": "spreading"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "edible_fruit",
+          "pollinator"
+        ],
+        "flowering_months": [
+          6,
+          7
+        ],
+        "interest_seasons": [
+          "summer",
+          "autumn"
+        ],
+        "flower_color": "white",
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": "medium",
+        "water_need": "medium",
+        "pruning_months": [
+          2,
+          3
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "Choisir un cultivar sans épines (ex. 'Loch Ness'). À palisser ou contenir pour garder une pousse ordonnée ; récolte estivale généreuse.",
+      "tags": [
+        "fruitier",
+        "ete",
+        "sans_epines"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "betula_pendula",
+      "common_name": "Bouleau verruqueux",
+      "latin_name": "Betula pendula",
+      "cultivar": null,
+      "category": "tree",
+      "photo": null,
+      "climate": {
+        "min_temp_c": -30,
+        "drought_tolerance": "medium",
+        "wind_tolerance": "high"
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [
+          "sandy",
+          "loamy",
+          "humus"
+        ],
+        "drainage": [
+          "good",
+          "fast",
+          "moderate"
+        ],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "normal",
+          "dry"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 15.0,
+        "mature_spread_m": 5.0,
+        "planting_spacing_m": null,
+        "growth_rate": "fast",
+        "root_system": "non_invasive"
+      },
+      "characteristics": {
+        "foliage": "deciduous",
+        "uses": [
+          "ornamental",
+          "shade_provider"
+        ],
+        "flowering_months": [
+          4
+        ],
+        "interest_seasons": [
+          "spring",
+          "autumn",
+          "winter"
+        ],
+        "flower_color": "yellow_brown",
+        "autumn_color": "golden_yellow"
+      },
+      "care": {
+        "maintenance_level": "low",
+        "water_need": "very_low",
+        "pruning_months": [
+          11
+        ],
+        "non_toxic_pets": true,
+        "has_thorns": false
+      },
+      "notes": "Écorce blanche décorative et ombre légère laissant passer la lumière ; prévoir de la place en hauteur.",
+      "tags": [
+        "arbre",
+        "rustique",
+        "ombre_claire",
+        "pollen_allergisant"
+      ],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "manual",
+        "verified": true,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "abelia_grandiflora",
+      "common_name": "Abelia × grandiflora",
+      "latin_name": "Abelia × grandiflora",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q159973",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q159973",
+          "latin_name": "wikidata:Q159973"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "achillea_millefolium",
+      "common_name": "Achillée Millefeuille",
+      "latin_name": "Achillea millefolium",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.15,
+        "mature_spread_m": 1.0,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q25408",
+        "wikipedia_fr": "Achillée millefeuille"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q25408",
+          "dimensions.mature_height_m": "wikipedia_fr:Achillée_millefeuille",
+          "dimensions.mature_spread_m": "wikipedia_fr:Achillée_millefeuille",
+          "exposure.ideal": "eive:L=7.9",
+          "exposure.tolerated": "eive:L=7.9",
+          "latin_name": "wikidata:Q25408",
+          "soil.moisture": "eive:M=4.1",
+          "soil.ph": "eive:R=5.8"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "ajuga_reptans",
+      "common_name": "Bugle Rampant",
+      "latin_name": "Ajuga reptans",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade"
+        ],
+        "tolerated": [
+          "full_sun",
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.4,
+        "mature_spread_m": 1.0,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q157249",
+        "wikipedia_fr": "Bugle rampante"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Bugle_rampante",
+          "common_name": "wikidata:Q157249",
+          "dimensions.mature_height_m": "wikipedia_fr:Bugle_rampante",
+          "dimensions.mature_spread_m": "wikipedia_fr:Bugle_rampante",
+          "exposure.ideal": "eive:L=6.1",
+          "exposure.tolerated": "eive:L=6.1",
+          "latin_name": "wikidata:Q157249",
+          "soil.moisture": "eive:M=6.2"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "alchemilla_mollis",
+      "common_name": "Alchémille à poils mous",
+      "latin_name": "Alchemilla mollis",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q159091",
+        "wikipedia_fr": "Alchémille molle"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q159091",
+          "exposure.ideal": "eive:L=7",
+          "exposure.tolerated": "eive:L=7",
+          "latin_name": "wikidata:Q159091",
+          "soil.moisture": "eive:M=6",
+          "soil.ph": "eive:R=5"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "aster_amellus",
+      "common_name": "Aster amellus",
+      "latin_name": "Aster amellus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "alkaline",
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.6,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q819178",
+        "wikipedia_fr": "Aster amellus"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q819178",
+          "dimensions.mature_height_m": "wikipedia_fr:Aster_amellus",
+          "exposure.ideal": "eive:L=7.3",
+          "exposure.tolerated": "eive:L=7.3",
+          "latin_name": "wikidata:Q819178",
+          "soil.moisture": "eive:M=4",
+          "soil.ph": "eive:R=8.4"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "berberis_thunbergii",
+      "common_name": "epine-vinette de thunberg",
+      "latin_name": "Berberis thunbergii",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 2.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q158397",
+        "wikipedia_fr": "Berberis thunbergii"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q158397",
+          "dimensions.mature_height_m": "wikipedia_fr:Berberis_thunbergii",
+          "latin_name": "wikidata:Q158397"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "buddleja_davidii",
+      "common_name": "buddléa",
+      "latin_name": "Buddleja davidii",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 5.0,
+        "mature_spread_m": 0.075,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q161538",
+        "wikipedia_fr": "Buddleia de David"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q161538",
+          "dimensions.mature_height_m": "wikipedia_fr:Buddleia_de_David",
+          "dimensions.mature_spread_m": "wikipedia_fr:Buddleia_de_David",
+          "exposure.ideal": "eive:L=7.4",
+          "exposure.tolerated": "eive:L=7.4",
+          "latin_name": "wikidata:Q161538",
+          "soil.moisture": "eive:M=5",
+          "soil.ph": "eive:R=6.6"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "buxus_sempervirens",
+      "common_name": "Buxus sempervirens",
+      "latin_name": "Buxus sempervirens",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade",
+          "light_shade"
+        ],
+        "tolerated": [
+          "full_sun"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "alkaline",
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 8.0,
+        "mature_spread_m": 0.1,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q27344",
+        "wikipedia_fr": "Buxus sempervirens"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Buxus_sempervirens",
+          "common_name": "wikidata:Q27344",
+          "dimensions.mature_height_m": "wikipedia_fr:Buxus_sempervirens",
+          "dimensions.mature_spread_m": "wikipedia_fr:Buxus_sempervirens",
+          "exposure.ideal": "eive:L=4.8",
+          "exposure.tolerated": "eive:L=4.8",
+          "latin_name": "wikidata:Q27344",
+          "soil.moisture": "eive:M=4",
+          "soil.ph": "eive:R=8"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "calluna_vulgaris",
+      "common_name": "callune",
+      "latin_name": "Calluna vulgaris",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "acid"
+        ],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 1.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q26615",
+        "wikipedia_fr": "Calluna vulgaris"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Calluna_vulgaris",
+          "common_name": "wikidata:Q26615",
+          "dimensions.mature_height_m": "wikipedia_fr:Calluna_vulgaris",
+          "exposure.ideal": "eive:L=7.7",
+          "exposure.tolerated": "eive:L=7.7",
+          "latin_name": "wikidata:Q26615",
+          "soil.moisture": "eive:M=5.6",
+          "soil.ph": "eive:R=1.5"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "campanula_portenschlagiana",
+      "common_name": "Campanula portenschlagiana",
+      "latin_name": "Campanula portenschlagiana",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q847433",
+        "wikipedia_fr": "Campanula portenschlagiana"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q847433",
+          "latin_name": "wikidata:Q847433"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "carpinus_betulus",
+      "common_name": "Charme commun",
+      "latin_name": "Carpinus betulus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "light_shade"
+        ],
+        "tolerated": [
+          "partial_shade",
+          "dense_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 20.0,
+        "mature_spread_m": 10.0,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q158776",
+        "wikipedia_fr": "Charme commun"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q158776",
+          "dimensions.mature_height_m": "wikipedia_fr:Charme_commun",
+          "dimensions.mature_spread_m": "wikipedia_fr:Charme_commun",
+          "exposure.ideal": "eive:L=4.4",
+          "exposure.tolerated": "eive:L=4.4",
+          "latin_name": "wikidata:Q158776",
+          "soil.moisture": "eive:M=5.4",
+          "soil.ph": "eive:R=5.5"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "ceanothus_thyrsiflorus",
+      "common_name": "Ceanothus thyrsiflorus",
+      "latin_name": "Ceanothus thyrsiflorus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 0.6,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q2943644",
+        "wikipedia_fr": "Ceanothus thyrsiflorus"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q2943644",
+          "dimensions.mature_height_m": "wikipedia_fr:Ceanothus_thyrsiflorus",
+          "latin_name": "wikidata:Q2943644"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "cercis_siliquastrum",
+      "common_name": "Arbre de Judée",
+      "latin_name": "Cercis siliquastrum",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q29488",
+        "wikipedia_fr": "Arbre de Judée"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q29488",
+          "exposure.ideal": "eive:L=7.3",
+          "exposure.tolerated": "eive:L=7.3",
+          "latin_name": "wikidata:Q29488",
+          "soil.moisture": "eive:M=4.3",
+          "soil.ph": "eive:R=7.3"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "choisya_ternata",
+      "common_name": "Oranger du Mexique",
+      "latin_name": "Choisya ternata",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -10,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 3.0,
+        "mature_spread_m": 0.05,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q2964355",
+        "wikipedia_fr": "Choisya ternata"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m"
+        ],
+        "field_sources": {
+          "climate.min_temp_c": "wikipedia_fr:Choisya_ternata",
+          "common_name": "wikidata:Q2964355",
+          "dimensions.mature_height_m": "wikipedia_fr:Choisya_ternata",
+          "dimensions.mature_spread_m": "wikipedia_fr:Choisya_ternata",
+          "latin_name": "wikidata:Q2964355"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "cistus_purpureus",
+      "common_name": "Cistus × purpureus",
+      "latin_name": "Cistus × purpureus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "corylus_avellana",
+      "common_name": "Noisetier",
+      "latin_name": "Corylus avellana",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral"
+        ],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q124969",
+        "wikipedia_fr": "Corylus avellana"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q124969",
+          "latin_name": "wikidata:Q124969",
+          "soil.moisture": "eive:M=5.6",
+          "soil.ph": "eive:R=5.9"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "cotinus_coggygria",
+      "common_name": "Cotinus coggygria",
+      "latin_name": "Cotinus coggygria",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 5.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q161406",
+        "wikipedia_fr": "Cotinus coggygria"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q161406",
+          "dimensions.mature_height_m": "wikipedia_fr:Cotinus_coggygria",
+          "exposure.ideal": "eive:L=6.9",
+          "exposure.tolerated": "eive:L=6.9",
+          "latin_name": "wikidata:Q161406",
+          "soil.moisture": "eive:M=3.7",
+          "soil.ph": "eive:R=7.2"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "crataegus_monogyna",
+      "common_name": "aubépine à un style",
+      "latin_name": "Crataegus monogyna",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.057,
+        "mature_spread_m": 0.06,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q161511",
+        "wikipedia_fr": "Crataegus monogyna"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Crataegus_monogyna",
+          "common_name": "wikidata:Q161511",
+          "dimensions.mature_height_m": "wikipedia_fr:Crataegus_monogyna",
+          "dimensions.mature_spread_m": "wikipedia_fr:Crataegus_monogyna",
+          "exposure.ideal": "eive:L=7",
+          "exposure.tolerated": "eive:L=7",
+          "latin_name": "wikidata:Q161511",
+          "soil.moisture": "eive:M=4.4"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "deutzia_gracilis",
+      "common_name": "Deutzia gracilis",
+      "latin_name": "Deutzia gracilis",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q181521",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q181521",
+          "latin_name": "wikidata:Q181521"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "erigeron_karvinskianus",
+      "common_name": "vergerette de karvinski",
+      "latin_name": "Erigeron karvinskianus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.4,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q1926297",
+        "wikipedia_fr": "Erigeron karvinskianus"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "climate.min_temp_c": "wikipedia_fr:Erigeron_karvinskianus",
+          "common_name": "wikidata:Q1926297",
+          "dimensions.mature_height_m": "wikipedia_fr:Erigeron_karvinskianus",
+          "exposure.ideal": "eive:L=7",
+          "exposure.tolerated": "eive:L=7",
+          "latin_name": "wikidata:Q1926297",
+          "soil.moisture": "eive:M=3.7",
+          "soil.ph": "eive:R=7.3"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "escallonia_rubra",
+      "common_name": "Escallonia rubra",
+      "latin_name": "Escallonia rubra",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q12334111",
+        "wikipedia_fr": "Escallonia rubra"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q12334111",
+          "latin_name": "wikidata:Q12334111"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "euonymus_europaeus",
+      "common_name": "fusain deurope",
+      "latin_name": "Euonymus europaeus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "alkaline",
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q161379",
+        "wikipedia_fr": "Fusain d'Europe"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "care.non_toxic_pets",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Fusain_d'Europe",
+          "common_name": "wikidata:Q161379",
+          "latin_name": "wikidata:Q161379",
+          "soil.moisture": "eive:M=5",
+          "soil.ph": "eive:R=7.6"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "fagus_sylvatica",
+      "common_name": "Hêtre commun",
+      "latin_name": "Fagus sylvatica",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral"
+        ],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 45.5,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q146149",
+        "wikipedia_fr": "Hêtre commun"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Hêtre_commun",
+          "common_name": "wikidata:Q146149",
+          "dimensions.mature_height_m": "wikipedia_fr:Hêtre_commun",
+          "latin_name": "wikidata:Q146149",
+          "soil.moisture": "eive:M=5.5",
+          "soil.ph": "eive:R=5.7"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "ficus_carica",
+      "common_name": "Figuier commun",
+      "latin_name": "Ficus carica",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -18,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q36146",
+        "wikipedia_fr": "Ficus carica"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "care.non_toxic_pets",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Ficus_carica",
+          "climate.min_temp_c": "wikipedia_fr:Ficus_carica",
+          "common_name": "wikidata:Q36146",
+          "latin_name": "wikidata:Q36146",
+          "soil.moisture": "eive:M=3.5",
+          "soil.ph": "eive:R=7.3"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "forsythia_intermedia",
+      "common_name": "Forsythia × intermedia",
+      "latin_name": "Forsythia × intermedia",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "fragaria_vesca",
+      "common_name": "Fraisier des bois",
+      "latin_name": "Fragaria vesca",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q146684",
+        "wikipedia_fr": "Fraisier des bois"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q146684",
+          "exposure.ideal": "eive:L=6.7",
+          "exposure.tolerated": "eive:L=6.7",
+          "latin_name": "wikidata:Q146684",
+          "soil.moisture": "eive:M=4.9",
+          "soil.ph": "eive:R=6.8"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "gaura_lindheimeri",
+      "common_name": "Gaura lindheimeri",
+      "latin_name": "Gaura lindheimeri",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q1114174",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q1114174",
+          "latin_name": "wikidata:Q1114174"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "helleborus_orientalis",
+      "common_name": "Rose de carême",
+      "latin_name": "Helleborus orientalis",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "alkaline",
+          "neutral"
+        ],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.45,
+        "mature_spread_m": 0.07,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q937300",
+        "wikipedia_fr": "Rose de carême"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Rose_de_carême",
+          "common_name": "wikidata:Q937300",
+          "dimensions.mature_height_m": "wikipedia_fr:Rose_de_carême",
+          "dimensions.mature_spread_m": "wikipedia_fr:Rose_de_carême",
+          "exposure.ideal": "eive:L=7",
+          "exposure.tolerated": "eive:L=7",
+          "latin_name": "wikidata:Q937300",
+          "soil.moisture": "eive:M=6",
+          "soil.ph": "eive:R=8"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "hemerocallis_fulva",
+      "common_name": "Hémérocalle fauve",
+      "latin_name": "Hemerocallis fulva",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": 0.12,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q1424440",
+        "wikipedia_fr": "Hémérocalle fauve"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_spread_m",
+          "care.non_toxic_pets"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Hémérocalle_fauve",
+          "common_name": "wikidata:Q1424440",
+          "dimensions.mature_spread_m": "wikipedia_fr:Hémérocalle_fauve",
+          "latin_name": "wikidata:Q1424440"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "heuchera_micrantha",
+      "common_name": "Heuchera micrantha",
+      "latin_name": "Heuchera micrantha",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q9397620",
+        "wikipedia_fr": "Heuchera micrantha"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q9397620",
+          "latin_name": "wikidata:Q9397620"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "hibiscus_syriacus",
+      "common_name": "Hibiscus syriacus",
+      "latin_name": "Hibiscus syriacus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": 0.12,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q157756",
+        "wikipedia_fr": "Hibiscus syriacus"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_spread_m"
+        ],
+        "field_sources": {
+          "climate.min_temp_c": "wikipedia_fr:Hibiscus_syriacus",
+          "common_name": "wikidata:Q157756",
+          "dimensions.mature_spread_m": "wikipedia_fr:Hibiscus_syriacus",
+          "latin_name": "wikidata:Q157756"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "hosta_plantaginea",
+      "common_name": "Hosta plantaginea",
+      "latin_name": "Hosta plantaginea",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q11222293",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q11222293",
+          "latin_name": "wikidata:Q11222293"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "ilex_aquifolium",
+      "common_name": "houx",
+      "latin_name": "Ilex aquifolium",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 20.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q192190",
+        "wikipedia_fr": "Houx"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Houx",
+          "climate.min_temp_c": "wikipedia_fr:Houx",
+          "common_name": "wikidata:Q192190",
+          "dimensions.mature_height_m": "wikipedia_fr:Houx",
+          "latin_name": "wikidata:Q192190",
+          "soil.moisture": "eive:M=5.2",
+          "soil.ph": "eive:R=4"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "lagerstroemia_indica",
+      "common_name": "Lagerstroemia indica",
+      "latin_name": "Lagerstroemia indica",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 6.0,
+        "mature_spread_m": 0.09,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q1148692",
+        "wikipedia_fr": "Lagerstroemia indica"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q1148692",
+          "dimensions.mature_height_m": "wikipedia_fr:Lagerstroemia_indica",
+          "dimensions.mature_spread_m": "wikipedia_fr:Lagerstroemia_indica",
+          "latin_name": "wikidata:Q1148692"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "ligustrum_vulgare",
+      "common_name": "troène commun",
+      "latin_name": "Ligustrum vulgare",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -17,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "alkaline",
+          "neutral"
+        ],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 5.0,
+        "mature_spread_m": 0.025,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q1848856",
+        "wikipedia_fr": "Troène commun"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Troène_commun",
+          "climate.min_temp_c": "wikipedia_fr:Troène_commun",
+          "common_name": "wikidata:Q1848856",
+          "dimensions.mature_height_m": "wikipedia_fr:Troène_commun",
+          "dimensions.mature_spread_m": "wikipedia_fr:Troène_commun",
+          "exposure.ideal": "eive:L=6.7",
+          "exposure.tolerated": "eive:L=6.7",
+          "latin_name": "wikidata:Q1848856",
+          "soil.ph": "eive:R=7.6"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "lonicera_periclymenum",
+      "common_name": "chèvrefeuille des bois",
+      "latin_name": "Lonicera periclymenum",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade"
+        ],
+        "tolerated": [
+          "full_sun",
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q161584",
+        "wikipedia_fr": "Chèvrefeuille des bois"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Chèvrefeuille_des_bois",
+          "common_name": "wikidata:Q161584",
+          "exposure.ideal": "eive:L=6.1",
+          "exposure.tolerated": "eive:L=6.1",
+          "latin_name": "wikidata:Q161584",
+          "soil.moisture": "eive:M=5.7",
+          "soil.ph": "eive:R=4"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "mahonia_aquifolium",
+      "common_name": "Mahonia faux houx",
+      "latin_name": "Mahonia aquifolium",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -20,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q158303",
+        "wikipedia_fr": "Mahonia aquifolium"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "climate.min_temp_c": "wikipedia_fr:Mahonia_aquifolium",
+          "common_name": "wikidata:Q158303",
+          "exposure.ideal": "eive:L=6.8",
+          "exposure.tolerated": "eive:L=6.8",
+          "latin_name": "wikidata:Q158303",
+          "soil.moisture": "eive:M=4.3",
+          "soil.ph": "eive:R=6.5"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "nepeta_faassenii",
+      "common_name": "Nepeta × faassenii",
+      "latin_name": "Nepeta × faassenii",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "olea_europaea",
+      "common_name": "olivier européen",
+      "latin_name": "Olea europaea",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -13,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 15.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q37083",
+        "wikipedia_fr": "Olea europaea"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "climate.min_temp_c": "wikipedia_fr:Olea_europaea",
+          "common_name": "wikidata:Q37083",
+          "dimensions.mature_height_m": "wikipedia_fr:Olea_europaea",
+          "exposure.ideal": "eive:L=8",
+          "exposure.tolerated": "eive:L=8",
+          "latin_name": "wikidata:Q37083",
+          "soil.moisture": "eive:M=3.3",
+          "soil.ph": "eive:R=6.7"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "origanum_vulgare",
+      "common_name": "Marjolaine sauvage",
+      "latin_name": "Origanum vulgare",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q134283",
+        "wikipedia_fr": "Origan"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q134283",
+          "exposure.ideal": "eive:L=7",
+          "exposure.tolerated": "eive:L=7",
+          "latin_name": "wikidata:Q134283",
+          "soil.moisture": "eive:M=3.6",
+          "soil.ph": "eive:R=7.1"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "osmanthus_burkwoodii",
+      "common_name": "Osmanthus × burkwoodii",
+      "latin_name": "Osmanthus × burkwoodii",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": null,
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [],
+        "field_sources": {},
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "parthenocissus_quinquefolia",
+      "common_name": "vigne vierge à cinq folioles",
+      "latin_name": "Parthenocissus quinquefolia",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -25,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 20.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q157968",
+        "wikipedia_fr": "Parthenocissus quinquefolia"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Parthenocissus_quinquefolia",
+          "climate.min_temp_c": "wikipedia_fr:Parthenocissus_quinquefolia",
+          "common_name": "wikidata:Q157968",
+          "dimensions.mature_height_m": "wikipedia_fr:Parthenocissus_quinquefolia",
+          "exposure.ideal": "eive:L=6.5",
+          "exposure.tolerated": "eive:L=6.5",
+          "latin_name": "wikidata:Q157968",
+          "soil.moisture": "eive:M=5.3",
+          "soil.ph": "eive:R=6.7"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "perovskia_atriplicifolia",
+      "common_name": "Perovskia atriplicifolia",
+      "latin_name": "Perovskia atriplicifolia",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q579476",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q579476",
+          "latin_name": "wikidata:Q579476"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "philadelphus_coronarius",
+      "common_name": "Philadelphus coronarius",
+      "latin_name": "Philadelphus coronarius",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -30,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 4.0,
+        "mature_spread_m": 0.06,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q163791",
+        "wikipedia_fr": "Philadelphus coronarius"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "climate.min_temp_c": "wikipedia_fr:Philadelphus_coronarius",
+          "common_name": "wikidata:Q163791",
+          "dimensions.mature_height_m": "wikipedia_fr:Philadelphus_coronarius",
+          "dimensions.mature_spread_m": "wikipedia_fr:Philadelphus_coronarius",
+          "exposure.ideal": "eive:L=8",
+          "exposure.tolerated": "eive:L=8",
+          "latin_name": "wikidata:Q163791",
+          "soil.moisture": "eive:M=4",
+          "soil.ph": "eive:R=7"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "photinia_fraseri",
+      "common_name": "Photinia × fraseri",
+      "latin_name": "Photinia × fraseri",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q30913716",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q30913716",
+          "latin_name": "wikidata:Q30913716"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "pittosporum_tobira",
+      "common_name": "Pittosporum tobira",
+      "latin_name": "Pittosporum tobira",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "dry"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q161375",
+        "wikipedia_fr": "Pittosporum tobira"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q161375",
+          "exposure.ideal": "eive:L=7",
+          "exposure.tolerated": "eive:L=7",
+          "latin_name": "wikidata:Q161375",
+          "soil.moisture": "eive:M=3",
+          "soil.ph": "eive:R=5"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "prunus_avium",
+      "common_name": "cerisier des oiseaux",
+      "latin_name": "Prunus avium",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 25.0,
+        "mature_spread_m": 0.6,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q165137",
+        "wikipedia_fr": "Prunus avium"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q165137",
+          "dimensions.mature_height_m": "wikipedia_fr:Prunus_avium",
+          "dimensions.mature_spread_m": "wikipedia_fr:Prunus_avium",
+          "latin_name": "wikidata:Q165137",
+          "soil.moisture": "eive:M=5.3",
+          "soil.ph": "eive:R=6.6"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "pyracantha_coccinea",
+      "common_name": "Pyracantha coccinea",
+      "latin_name": "Pyracantha coccinea",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q159269",
+        "wikipedia_fr": "Pyracantha coccinea"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q159269",
+          "exposure.ideal": "eive:L=7.3",
+          "exposure.tolerated": "eive:L=7.3",
+          "latin_name": "wikidata:Q159269",
+          "soil.moisture": "eive:M=4.7",
+          "soil.ph": "eive:R=6"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "ribes_rubrum",
+      "common_name": "groseillier rouge",
+      "latin_name": "Ribes rubrum",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -40,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "light_shade"
+        ],
+        "tolerated": [
+          "partial_shade",
+          "dense_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 1.5,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q146661",
+        "wikipedia_fr": "Ribes rubrum"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Ribes_rubrum",
+          "climate.min_temp_c": "wikipedia_fr:Ribes_rubrum",
+          "common_name": "wikidata:Q146661",
+          "dimensions.mature_height_m": "wikipedia_fr:Ribes_rubrum",
+          "exposure.ideal": "eive:L=4.4",
+          "exposure.tolerated": "eive:L=4.4",
+          "latin_name": "wikidata:Q146661",
+          "soil.moisture": "eive:M=7.4",
+          "soil.ph": "eive:R=6.3"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "rosa_rugosa",
+      "common_name": "rosier rugueux",
+      "latin_name": "Rosa rugosa",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -46,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": 0.09,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q634975",
+        "wikipedia_fr": "Rosa rugosa"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_spread_m"
+        ],
+        "field_sources": {
+          "climate.min_temp_c": "wikipedia_fr:Rosa_rugosa",
+          "common_name": "wikidata:Q634975",
+          "dimensions.mature_spread_m": "wikipedia_fr:Rosa_rugosa",
+          "latin_name": "wikidata:Q634975"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "rosmarinus_officinalis",
+      "common_name": "Rosmarinus officinalis",
+      "latin_name": "Rosmarinus officinalis",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 2.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q122679",
+        "wikipedia_fr": "Rosmarinus officinalis"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Rosmarinus_officinalis",
+          "common_name": "wikidata:Q122679",
+          "dimensions.mature_height_m": "wikipedia_fr:Rosmarinus_officinalis",
+          "exposure.ideal": "eive:L=8.5",
+          "exposure.tolerated": "eive:L=8.5",
+          "latin_name": "wikidata:Q122679",
+          "soil.moisture": "eive:M=2",
+          "soil.ph": "eive:R=7"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "rudbeckia_fulgida",
+      "common_name": "Rudbeckia fulgida",
+      "latin_name": "Rudbeckia fulgida",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q450250",
+        "wikipedia_fr": "Rudbeckia fulgida"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q450250",
+          "latin_name": "wikidata:Q450250"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "sambucus_nigra",
+      "common_name": "sureau noir",
+      "latin_name": "Sambucus nigra",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 1.8,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q22701",
+        "wikipedia_fr": "Sambucus nigra"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Sambucus_nigra",
+          "common_name": "wikidata:Q22701",
+          "dimensions.mature_height_m": "wikipedia_fr:Sambucus_nigra",
+          "exposure.ideal": "eive:L=6.6",
+          "exposure.tolerated": "eive:L=6.6",
+          "latin_name": "wikidata:Q22701",
+          "soil.ph": "eive:R=6.7"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "sedum_spectabile",
+      "common_name": "Sedum spectabile",
+      "latin_name": "Sedum spectabile",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q38641474",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q38641474",
+          "latin_name": "wikidata:Q38641474"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "spiraea_japonica",
+      "common_name": "Spiraea japonica",
+      "latin_name": "Spiraea japonica",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 2.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q158201",
+        "wikipedia_fr": "Spiraea japonica"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q158201",
+          "dimensions.mature_height_m": "wikipedia_fr:Spiraea_japonica",
+          "latin_name": "wikidata:Q158201"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "syringa_vulgaris",
+      "common_name": "lilas commun",
+      "latin_name": "Syringa vulgaris",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun",
+          "partial_shade"
+        ],
+        "tolerated": [
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 5.0,
+        "mature_spread_m": 0.2,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q6565319",
+        "wikipedia_fr": "Syringa vulgaris"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q6565319",
+          "dimensions.mature_height_m": "wikipedia_fr:Syringa_vulgaris",
+          "dimensions.mature_spread_m": "wikipedia_fr:Syringa_vulgaris",
+          "exposure.ideal": "eive:L=6.8",
+          "exposure.tolerated": "eive:L=6.8",
+          "latin_name": "wikidata:Q6565319",
+          "soil.moisture": "eive:M=4.9",
+          "soil.ph": "eive:R=6.4"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "taxus_baccata",
+      "common_name": "If commun",
+      "latin_name": "Taxus baccata",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 25.0,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q179729",
+        "wikipedia_fr": "If commun"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q179729",
+          "dimensions.mature_height_m": "wikipedia_fr:If_commun",
+          "latin_name": "wikidata:Q179729",
+          "soil.ph": "eive:R=7.1"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "thymus_vulgaris",
+      "common_name": "Thym commun",
+      "latin_name": "Thymus vulgaris",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "full_sun"
+        ],
+        "tolerated": [
+          "partial_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "alkaline",
+          "neutral"
+        ],
+        "moisture": [
+          "dry"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 0.3,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q148668",
+        "wikipedia_fr": "Thymus vulgaris"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "dimensions.mature_height_m",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Thymus_vulgaris",
+          "climate.min_temp_c": "wikipedia_fr:Thymus_vulgaris",
+          "common_name": "wikidata:Q148668",
+          "dimensions.mature_height_m": "wikipedia_fr:Thymus_vulgaris",
+          "exposure.ideal": "eive:L=8",
+          "exposure.tolerated": "eive:L=8",
+          "latin_name": "wikidata:Q148668",
+          "soil.moisture": "eive:M=1.5",
+          "soil.ph": "eive:R=7.5"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "trachelospermum_jasminoides",
+      "common_name": "Faux jasmin",
+      "latin_name": "Trachelospermum jasminoides",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": -15,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q1207043",
+        "wikipedia_fr": "Trachelospermum jasminoides"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "climate.min_temp_c",
+          "care.non_toxic_pets"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Trachelospermum_jasminoides",
+          "climate.min_temp_c": "wikipedia_fr:Trachelospermum_jasminoides",
+          "common_name": "wikidata:Q1207043",
+          "latin_name": "wikidata:Q1207043"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "viburnum_opulus",
+      "common_name": "Obier",
+      "latin_name": "Viburnum opulus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade"
+        ],
+        "tolerated": [
+          "full_sun",
+          "light_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "normal",
+          "moist"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q156928",
+        "wikipedia_fr": "Viorne obier"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "care.non_toxic_pets",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Viorne_obier",
+          "common_name": "wikidata:Q156928",
+          "exposure.ideal": "eive:L=6",
+          "exposure.tolerated": "eive:L=6",
+          "latin_name": "wikidata:Q156928",
+          "soil.moisture": "eive:M=6.5",
+          "soil.ph": "eive:R=6.9"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "viburnum_tinus",
+      "common_name": "Laurier-tin",
+      "latin_name": "Viburnum tinus",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "partial_shade",
+          "light_shade"
+        ],
+        "tolerated": [
+          "full_sun"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "acid",
+          "neutral"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": 7.0,
+        "mature_spread_m": 3.0,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q1321268",
+        "wikipedia_fr": "Viorne tin"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q1321268",
+          "dimensions.mature_height_m": "wikipedia_fr:Viorne_tin",
+          "dimensions.mature_spread_m": "wikipedia_fr:Viorne_tin",
+          "exposure.ideal": "eive:L=5",
+          "exposure.tolerated": "eive:L=5",
+          "latin_name": "wikidata:Q1321268",
+          "soil.moisture": "eive:M=4.5",
+          "soil.ph": "eive:R=5"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "vinca_minor",
+      "common_name": "petite pervenche",
+      "latin_name": "Vinca minor",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [
+          "light_shade"
+        ],
+        "tolerated": [
+          "partial_shade",
+          "dense_shade"
+        ]
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [
+          "neutral",
+          "alkaline"
+        ],
+        "moisture": [
+          "dry",
+          "normal"
+        ]
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q161777",
+        "wikipedia_fr": "Petite Pervenche"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "exposure.ideal",
+          "exposure.tolerated",
+          "soil.moisture",
+          "soil.ph"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q161777",
+          "exposure.ideal": "eive:L=3.9",
+          "exposure.tolerated": "eive:L=3.9",
+          "latin_name": "wikidata:Q161777",
+          "soil.moisture": "eive:M=5.3",
+          "soil.ph": "eive:R=6.6"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "weigela_florida",
+      "common_name": "Weigela florida",
+      "latin_name": "Weigela florida",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": null,
+        "mature_spread_m": null,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": null,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q164323",
+        "wikipedia_fr": null
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category"
+        ],
+        "field_sources": {
+          "common_name": "wikidata:Q164323",
+          "latin_name": "wikidata:Q164323"
+        },
+        "updated_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "wisteria_sinensis",
+      "common_name": "Wisteria sinensis",
+      "latin_name": "Wisteria sinensis",
+      "cultivar": null,
+      "category": null,
+      "photo": null,
+      "climate": {
+        "min_temp_c": null,
+        "drought_tolerance": null,
+        "wind_tolerance": null
+      },
+      "exposure": {
+        "ideal": [],
+        "tolerated": []
+      },
+      "soil": {
+        "types": [],
+        "drainage": [],
+        "ph": [],
+        "moisture": []
+      },
+      "dimensions": {
+        "mature_height_m": 10.0,
+        "mature_spread_m": 0.2,
+        "planting_spacing_m": null,
+        "growth_rate": null,
+        "root_system": null
+      },
+      "characteristics": {
+        "foliage": null,
+        "uses": [],
+        "flowering_months": [],
+        "interest_seasons": [],
+        "flower_color": null,
+        "autumn_color": null
+      },
+      "care": {
+        "maintenance_level": null,
+        "water_need": null,
+        "pruning_months": [],
+        "non_toxic_pets": false,
+        "has_thorns": null
+      },
+      "notes": "",
+      "tags": [],
+      "links": {
+        "wikidata": "Q159116",
+        "wikipedia_fr": "Wisteria sinensis"
+      },
+      "meta": {
+        "source": "seed",
+        "verified": false,
+        "uncertain_fields": [
+          "category",
+          "dimensions.mature_height_m",
+          "dimensions.mature_spread_m",
+          "care.non_toxic_pets"
+        ],
+        "field_sources": {
+          "care.non_toxic_pets": "wikipedia_fr:Wisteria_sinensis",
+          "common_name": "wikidata:Q159116",
+          "dimensions.mature_height_m": "wikipedia_fr:Wisteria_sinensis",
+          "dimensions.mature_spread_m": "wikipedia_fr:Wisteria_sinensis",
+          "latin_name": "wikidata:Q159116"
+        },
+        "updated_at": "2026-11-21"
+      }
+    }
+  ]
+}

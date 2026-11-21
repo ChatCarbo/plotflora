@@ -1,0 +1,15 @@
+[package]
+name = "plotflora-core"
+description = "Modèle de données, géométrie, recherche et scoring de PlotFlora (sans I/O)."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[features]
+default = []
+serde = ["dep:serde"]
+
+[dependencies]
+serde = { workspace = true, optional = true }
