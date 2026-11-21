@@ -33,14 +33,14 @@ cargo run --release -p plotflora-app
 Pour respecter les règles d'usage de Wikimedia, indiquez un contact (URL ou e-mail) à la compilation :
 
 ```powershell
-$env:PLOTFLORA_CONTACT = "https://github.com/votre-compte/plotflora"; cargo build --release -p plotflora-app
+$env:PLOTFLORA_CONTACT = "https://github.com/ChatCarbo/plotflora"; cargo build --release -p plotflora-app
 ```
 
 Données utilisateur : `%APPDATA%\PlotFlora\` (`plants_catalog.json`, `photos\`, `lookup_cache.json`).
 
 ## Générer le catalogue embarqué (`plotflora-catalog-builder`)
 
-Outil **réservé au développeur**, à ne pas distribuer aux utilisateurs. On le lance avant de compiler
+Outil **réservé au développeur**. On le lance avant de compiler
 une version de PlotFlora pour préparer les deux fichiers de données intégrés au binaire :
 `assets/eive_index.json` (exposition, humidité et pH, à partir du classeur EIVE) et
 `assets/plants_catalog.seed.json` (fiches de départ complétées via Wikidata et Wikipédia).
