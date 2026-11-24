@@ -332,9 +332,11 @@ impl Catalog {
 impl Plant {
     /// Nom affiché : « Nom commun 'Cultivar' ».
     pub fn display_name(&self) -> String {
+        let mut chars = self.common_name.trim().chars();
+        let name: String = chars.next().map(|c| c.to_uppercase().chain(chars).collect()).unwrap_or_default();
         match &self.cultivar {
-            Some(c) if !c.is_empty() => format!("{} '{c}'", self.common_name),
-            _ => self.common_name.clone(),
+            Some(c) if !c.is_empty() => format!("{name} '{c}'"),
+            _ => name,
         }
     }
 
@@ -415,6 +417,13 @@ impl Plant {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn display_name_is_capitalized() {
+        let p = Plant { common_name: " érable du Japon".into(), cultivar: Some("Osakazuki".into()), ..Plant::default() };
+        assert_eq!(p.display_name(), "Érable du Japon 'Osakazuki'");
+        assert_eq!(Plant::default().display_name(), "");
+    }
 
     #[test]
     fn zone_ids_never_reused() {
