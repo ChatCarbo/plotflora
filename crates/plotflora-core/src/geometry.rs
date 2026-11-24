@@ -100,25 +100,47 @@ pub fn hit_test(zone: &Zone, p: Pt, tol: f64) -> bool {
     }
 }
 
+/// Centre de gravité d'un polygone (peut tomber à l'extérieur s'il est concave).
+pub fn polygon_centroid(pts: &[Pt]) -> Option<Pt> {
+    let a = signed_area(pts);
+    if pts.len() < 3 || a.abs() <= f64::EPSILON {
+        return mean(pts);
+    }
+    let n = pts.len();
+    let (mut cx, mut cy) = (0.0, 0.0);
+    for i in 0..n {
+        let (p, q) = (pts[i], pts[(i + 1) % n]);
+        let f = p[0] * q[1] - q[0] * p[1];
+        cx += (p[0] + q[0]) * f;
+        cy += (p[1] + q[1]) * f;
+    }
+    Some([cx / (6.0 * a), cy / (6.0 * a)])
+}
+
+/// Point situé à l'intérieur du polygone : le centre de gravité s'il convient, sinon le milieu
+/// du plus large segment intérieur sur l'horizontale passant par lui.
+pub fn polygon_label_anchor(pts: &[Pt]) -> Option<Pt> {
+    let c = polygon_centroid(pts)?;
+    if pts.len() < 3 || point_in_polygon(c, pts) {
+        return Some(c);
+    }
+    let y = c[1];
+    let n = pts.len();
+    let mut xs: Vec<f64> = (0..n)
+        .filter_map(|i| {
+            let (a, b) = (pts[i], pts[(i + 1) % n]);
+            ((a[1] > y) != (b[1] > y)).then(|| a[0] + (y - a[1]) * (b[0] - a[0]) / (b[1] - a[1]))
+        })
+        .collect();
+    xs.sort_by(f64::total_cmp);
+    xs.chunks_exact(2).max_by(|p, q| (p[1] - p[0]).total_cmp(&(q[1] - q[0]))).map(|p| [(p[0] + p[1]) / 2.0, y]).or(Some(c))
+}
+
 /// Point d'ancrage du libellé.
 pub fn label_anchor(zone: &Zone) -> Option<Pt> {
     let pts = &zone.points;
     match zone.kind {
-        ZoneKind::Area if pts.len() >= 3 => {
-            let a = signed_area(pts);
-            if a.abs() <= f64::EPSILON {
-                return mean(pts);
-            }
-            let n = pts.len();
-            let (mut cx, mut cy) = (0.0, 0.0);
-            for i in 0..n {
-                let (p, q) = (pts[i], pts[(i + 1) % n]);
-                let f = p[0] * q[1] - q[0] * p[1];
-                cx += (p[0] + q[0]) * f;
-                cy += (p[1] + q[1]) * f;
-            }
-            Some([cx / (6.0 * a), cy / (6.0 * a)])
-        }
+        ZoneKind::Area if pts.len() >= 3 => polygon_label_anchor(pts),
         ZoneKind::Line if pts.len() >= 2 => {
             let half = polyline_length(pts) / 2.0;
             let mut acc = 0.0;
@@ -253,6 +275,10 @@ mod tests {
         assert_eq!(label_anchor(&line), Some([5.0, 0.0]));
         let sq = Zone { kind: ZoneKind::Area, points: SQUARE.to_vec(), ..Zone::default() };
         assert_eq!(label_anchor(&sq), Some([2.0, 1.5]));
+        // L très ouvert : le centre de gravité tombe hors du polygone, l'ancrage reste dedans.
+        let l: Vec<Pt> = vec![[0.0, 0.0], [10.0, 0.0], [10.0, 1.0], [1.0, 1.0], [1.0, 10.0], [0.0, 10.0]];
+        assert!(!point_in_polygon(polygon_centroid(&l).unwrap(), &l));
+        assert!(point_in_polygon(polygon_label_anchor(&l).unwrap(), &l));
     }
 
     #[test]

@@ -3,13 +3,13 @@
 
 //! Menus, barre d'outils, panneau latéral (Jardin, Zone, Catalogue) et fenêtres.
 
-use crate::app::{App, Editor, RecCache, Tab, Tool};
+use crate::app::{App, Editor, IdeasCache, RecCache, Tab, Tool};
 use crate::canvas::status_color;
 use crate::widgets::*;
 use eframe::egui::{self, Color32, Context, RichText, Ui, Vec2};
 use plotflora_core::convert::{plant_id, unique_id};
 use plotflora_core::geometry::{is_simple_polygon, quantity, zone_size_m};
-use plotflora_core::scoring::{recommend, AlertLevel, Verdict};
+use plotflora_core::scoring::{ambiance_fit, recommend, AlertLevel, Verdict};
 use plotflora_core::search::{normalize, search};
 use plotflora_core::*;
 use plotflora_data::{store, today};
@@ -74,6 +74,11 @@ pub fn menu_bar(app: &mut App, ctx: &Context) {
                     app.redo();
                 }
             });
+            ui.menu_button("Options", |ui| {
+                ui.checkbox(&mut app.auto_photos, "Télécharger la photo des plantes ajoutées au jardin").on_hover_text(
+                    "Récupère la photo libre (Wikimedia Commons) d'une plante au moment où vous l'assignez à une zone. Nécessite Internet.",
+                );
+            });
             ui.menu_button("Aide", |ui| {
                 if ui.button("Obtenir une vue aérienne IGN").clicked() {
                     ui.close_menu();
@@ -93,6 +98,11 @@ pub fn status_bar(app: &mut App, ctx: &Context) {
         ui.horizontal(|ui| {
             if app.busy() {
                 ui.spinner();
+            }
+            let photos = app.photos_pending();
+            if photos > 0 {
+                ui.spinner();
+                ui.weak(format!("{photos} photo(s) en cours de téléchargement"));
             }
             let col = if app.status_error { RED } else { ui.visuals().text_color() };
             ui.label(RichText::new(&app.status).color(col));
@@ -117,14 +127,23 @@ pub fn toolbar(app: &mut App, ctx: &Context) {
         tools.push((Tool::Measure, "📏 Mesurer"));
         tools.push((Tool::North, "N  Orienter le Nord"));
         match source {
-            MapSource::Image => tools.push((Tool::Scale, "↔ Calibrer l'échelle")),
+            MapSource::Image => {
+                tools.push((Tool::Detect, "🔍 Détecter le jardin"));
+                tools.push((Tool::Boundary, "▭ Contour du terrain"));
+                tools.push((Tool::Scale, "↔ Calibrer l'échelle"));
+            }
             MapSource::Drawing => {
                 tools.push((Tool::Boundary, "▭ Contour du terrain"));
                 tools.push((Tool::Obstacle, "■ Obstacle"));
             }
         }
+        tools.push((Tool::Sector, "S  Secteur de sol"));
         for (t, label) in tools {
             ui.selectable_value(&mut app.tool, t, label).on_hover_text(t.hint());
+        }
+        if app.tool == Tool::Detect {
+            ui.add(egui::Slider::new(&mut app.detect_tolerance, 10.0..=120.0).text("Tolérance").integer())
+                .on_hover_text("Plus élevée : la détection englobe des couleurs plus variées (risque de déborder).");
         }
         if app.tool == Tool::Obstacle {
             combo(ui, "obstacle_kind", ObstacleKind::ALL, &mut app.obstacle_kind);
@@ -163,12 +182,14 @@ pub fn side_panel(app: &mut App, ctx: &Context) {
             ui.selectable_value(&mut app.tab, Tab::Garden, "🏡 Jardin");
             ui.selectable_value(&mut app.tab, Tab::Zone, "📍 Zone");
             ui.selectable_value(&mut app.tab, Tab::Catalog, "🌿 Catalogue");
+            ui.selectable_value(&mut app.tab, Tab::Ideas, "💡 Idées");
         });
         ui.separator();
         egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| match app.tab {
             Tab::Garden => garden(app, ui),
             Tab::Zone => zone(app, ui, ctx),
             Tab::Catalog => catalog(app, ui, ctx),
+            Tab::Ideas => ideas(app, ui, ctx),
         });
     });
 }
@@ -271,6 +292,22 @@ fn garden(app: &mut App, ui: &mut Ui) {
         }
     }
 
+    if p.map.source == MapSource::Image {
+        ui.add_space(6.0);
+        ui.horizontal_wrapped(|ui| {
+            ui.label(if p.map.boundary.is_some() { "Contour du jardin : défini" } else { "Contour du jardin : non défini" });
+            if ui.small_button("Détecter").on_hover_text("Cliquez ensuite au milieu du jardin sur la carte").clicked() {
+                tool = Some(Tool::Detect);
+            }
+            if ui.small_button("Tracer").clicked() {
+                tool = Some(Tool::Boundary);
+            }
+            if p.map.boundary.is_some() && ui.small_button("Effacer").clicked() {
+                p.map.boundary = None;
+            }
+        });
+    }
+
     ui.add_space(8.0);
     ui.heading("Contexte du jardin");
     let e = &mut p.environment;
@@ -293,7 +330,49 @@ fn garden(app: &mut App, ui: &mut Ui) {
         ui.label("Disponibilité d'arrosage");
         opt_combo(ui, "water", Level::ALL, &mut e.watering_availability);
         ui.end_row();
+        ui.label("Ambiance recherchée");
+        opt_combo_with(ui, "ambiance", Ambiance::ALL, &mut e.ambiance, "Aucune");
+        ui.end_row();
     });
+
+    ui.add_space(8.0);
+    ui.horizontal(|ui| {
+        ui.heading("Secteurs de sol");
+        if ui.small_button("+ Tracer").on_hover_text("Tracez sur la carte une partie du jardin dont le sol diffère").clicked() {
+            tool = Some(Tool::Sector);
+        }
+    });
+    if p.soil_sectors.is_empty() {
+        ui.weak("Aucun : le sol du jardin s'applique partout. Tracez un secteur pour une partie au sol différent.");
+    }
+    let mut remove_sector = None;
+    for (i, s) in p.soil_sectors.iter_mut().enumerate() {
+        ui.push_id(("sector", i), |ui| {
+            ui.group(|ui| {
+                ui.horizontal(|ui| {
+                    ui.add(egui::TextEdit::singleline(&mut s.label).desired_width(160.0));
+                    if ui.small_button("🗑").on_hover_text("Supprimer le secteur").clicked() {
+                        remove_sector = Some(i);
+                    }
+                });
+                egui::Grid::new("soil").num_columns(2).show(ui, |ui| {
+                    const SAME: &str = "Comme le jardin";
+                    ui.label("Type de sol");
+                    opt_combo_with(ui, "t", SoilType::ALL, &mut s.soil_type, SAME);
+                    ui.end_row();
+                    ui.label("Drainage");
+                    opt_combo_with(ui, "d", Drainage::ALL, &mut s.soil_drainage, SAME);
+                    ui.end_row();
+                    ui.label("pH");
+                    opt_combo_with(ui, "p", Ph::ALL, &mut s.soil_ph, SAME);
+                    ui.end_row();
+                });
+            });
+        });
+    }
+    if let Some(i) = remove_sector {
+        p.soil_sectors.remove(i);
+    }
 
     let outdated: Vec<String> =
         p.plants_snapshot.iter().filter(|(id, snap)| app.catalog.get(id).is_some_and(|c| c != *snap)).map(|(id, _)| id.clone()).collect();
@@ -326,7 +405,7 @@ fn garden(app: &mut App, ui: &mut Ui) {
 fn refresh_recs(app: &mut App, zone_id: &str, force: bool) {
     let Some(doc) = &app.doc else { return };
     let Some(zone) = doc.project.zone(zone_id) else { return };
-    let env = &doc.project.environment;
+    let env = &doc.project.environment_for(zone);
     let mpu = doc.project.map.meters_per_unit();
     let stale = app.recs.as_ref().is_some_and(|r| {
         r.zone.id == zone_id
@@ -378,6 +457,7 @@ fn zone(app: &mut App, ui: &mut Ui, ctx: &Context) {
     let Some(doc) = app.doc.as_mut() else { return };
     let mpu = doc.project.map.meters_per_unit();
     let project_file = doc.path.clone();
+    let soil = doc.project.zone(&id).map(|z| (doc.project.sector_for(z).map(|s| s.label.clone()), doc.project.environment_for(z)));
     let Some(z) = doc.project.zone_mut(&id) else {
         app.selected = None;
         return;
@@ -423,6 +503,9 @@ fn zone(app: &mut App, ui: &mut Ui, ctx: &Context) {
         ui.label("Entretien maximum");
         combo(ui, "maint", MaxMaintenance::ALL, &mut z.max_maintenance);
         ui.end_row();
+        ui.label("Ambiance");
+        opt_combo_with(ui, "zamb", Ambiance::ALL, &mut z.ambiance, "Celle du jardin");
+        ui.end_row();
     });
     ui.label("Usages souhaités");
     checks(ui, Use::ALL, &mut z.desired_uses);
@@ -437,6 +520,20 @@ fn zone(app: &mut App, ui: &mut Ui, ctx: &Context) {
     };
     if z.kind == ZoneKind::Area && !is_simple_polygon(&z.points) {
         ui.colored_label(RED, "Polygone invalide (côtés croisés) : corrigez les sommets.");
+    }
+
+    if let Some((sector, e)) = &soil {
+        let v = |o: Option<&str>| o.unwrap_or("inconnu").to_lowercase();
+        ui.label(format!(
+            "Sol : {} · drainage {} · pH {}",
+            v(e.soil_type.map(SoilType::label)),
+            v(e.soil_drainage.map(Drainage::label)),
+            v(e.soil_ph.map(Ph::label))
+        ));
+        ui.weak(match sector {
+            Some(l) => format!("Valeurs du secteur « {l} », complétées par celles du jardin"),
+            None => "Valeurs du jardin (la zone n'est dans aucun secteur de sol)".to_owned(),
+        });
     }
 
     ui.separator();
@@ -575,6 +672,7 @@ fn zone(app: &mut App, ui: &mut Ui, ctx: &Context) {
             d.project.assign(&id, &p);
             app.info(format!("{} assignée à la zone.", p.display_name()));
         }
+        app.queue_photo(&p, false);
     }
 }
 
@@ -639,6 +737,114 @@ fn catalog(app: &mut App, ui: &mut Ui, ctx: &Context) {
     }
     if let Some(plant) = open {
         app.editor = Some(Editor { plant, is_new: false });
+    }
+}
+
+// ---------------------------------------------------------------- Idées
+
+fn ideas(app: &mut App, ui: &mut Ui, ctx: &Context) {
+    let Some(doc) = app.doc.as_ref() else {
+        ui.label("Créez ou ouvrez un projet pour obtenir des idées de plantes adaptées à votre jardin.");
+        return;
+    };
+    let sectors: Vec<(String, String)> = doc.project.soil_sectors.iter().map(|s| (s.id.clone(), s.label.clone())).collect();
+    if app.ideas_cache.is_none() && app.ideas.ambiance.is_none() {
+        app.ideas.ambiance = doc.project.environment.ambiance;
+    }
+
+    ui.heading("Idées de plantes");
+    ui.weak("Plantes du catalogue compatibles avec le sol choisi et l'ambiance recherchée, classées par score.");
+    egui::Grid::new("ideas").num_columns(2).show(ui, |ui| {
+        ui.label("Ambiance");
+        opt_combo_with(ui, "i_amb", Ambiance::ALL, &mut app.ideas.ambiance, "Toutes");
+        ui.end_row();
+        ui.label("Sol");
+        let current = app.ideas.sector.as_ref().and_then(|id| sectors.iter().find(|(i, _)| i == id));
+        egui::ComboBox::new("i_sector", "").selected_text(current.map_or_else(|| "Sol du jardin".to_owned(), |(_, l)| l.clone())).show_ui(
+            ui,
+            |ui| {
+                ui.selectable_value(&mut app.ideas.sector, None, "Sol du jardin");
+                for (id, label) in &sectors {
+                    ui.selectable_value(&mut app.ideas.sector, Some(id.clone()), label);
+                }
+            },
+        );
+        ui.end_row();
+        ui.label("Exposition");
+        opt_combo_with(ui, "i_sun", Sun::ALL, &mut app.ideas.sun, "Indifférente");
+        ui.end_row();
+        ui.label("Catégorie");
+        opt_combo_with(ui, "i_cat", Category::ALL, &mut app.ideas.category, "Toutes");
+        ui.end_row();
+        ui.label("Hauteur max");
+        opt_f64(ui, &mut app.ideas.max_height_m, 2.0, (0.05, 60.0), " m");
+        ui.end_row();
+    });
+
+    // Calcul (mis en cache tant que les réglages, le sol et le catalogue ne changent pas)
+    let sector = app.ideas.sector.as_deref().and_then(|id| doc.project.soil_sectors.iter().find(|s| s.id == id));
+    let mut env = doc.project.environment_with(sector);
+    env.ambiance = app.ideas.ambiance;
+    let soil_known = env.soil_type.is_some() || env.soil_drainage.is_some() || env.soil_ph.is_some();
+    let key = (app.ideas.clone(), env.clone(), app.catalog_rev);
+    if app.ideas_cache.as_ref().is_none_or(|c| c.key != key) {
+        let q = &app.ideas;
+        let zone = Zone { sun_exposure: q.sun, max_height_m: q.max_height_m, ..Zone::default() };
+        let plants = app
+            .catalog
+            .plants()
+            .into_iter()
+            .filter(|p| q.category.is_none_or(|c| p.category == Some(c)) && q.ambiance.is_none_or(|a| ambiance_fit(p, a) > 0));
+        let mut list = recommend(&env, &zone, plants, None);
+        list.retain(|r| !r.is_blocked() && (!soil_known || r.breakdown[3].points >= 15));
+        list.truncate(60);
+        app.ideas_cache = Some(IdeasCache { key, list });
+    }
+
+    ui.separator();
+    if !soil_known {
+        ui.colored_label(ORANGE, "Sol non renseigné : la compatibilité du sol n'est pas vérifiée (voir l'onglet Jardin).");
+    }
+    let list = app.ideas_cache.as_ref().map(|c| c.list.clone()).unwrap_or_default();
+    ui.weak(format!("{} plante(s) proposée(s)", list.len()));
+    let zone_sel = app.selected.clone().filter(|id| app.doc.as_ref().is_some_and(|d| d.project.zone(id).is_some()));
+    let (mut open, mut assign) = (None, None);
+    for r in &list {
+        let Some(p) = app.catalog.get(&r.plant_id).cloned() else { continue };
+        ui.push_id(&r.plant_id, |ui| {
+            ui.horizontal(|ui| {
+                plant_thumb(app, ui, ctx, Some(&p), None, 48.0);
+                ui.vertical(|ui| {
+                    ui.label(RichText::new(format!("{}/100 · {}", r.score, p.display_name())).color(verdict_color(r.verdict)));
+                    ui.label(RichText::new(&p.latin_name).italics());
+                    let ambs: Vec<&str> = p.characteristics.ambiances.iter().map(|a| a.label()).collect();
+                    if !ambs.is_empty() {
+                        ui.weak(ambs.join(" · "));
+                    }
+                    ui.horizontal(|ui| {
+                        if ui.small_button("Fiche").clicked() {
+                            open = Some(p.clone());
+                        }
+                        if let Some(z) = &zone_sel {
+                            if ui.small_button("Assigner à la zone sélectionnée").clicked() {
+                                assign = Some((z.clone(), p.clone()));
+                            }
+                        }
+                    });
+                });
+            });
+            ui.separator();
+        });
+    }
+    if let Some(plant) = open {
+        app.editor = Some(Editor { plant, is_new: false });
+    }
+    if let Some((zone_id, plant)) = assign {
+        if let Some(d) = app.doc.as_mut() {
+            d.project.assign(&zone_id, &plant);
+        }
+        app.info(format!("{} assignée à la zone.", plant.display_name()));
+        app.queue_photo(&plant, false);
     }
 }
 
@@ -757,6 +963,7 @@ fn editor_window(app: &mut App, ctx: &Context) {
         Assign,
         Delete,
         Photo,
+        Fetch,
     }
     let mut action = Action::None;
     let mut open = true;
@@ -776,6 +983,12 @@ fn editor_window(app: &mut App, ctx: &Context) {
                 }
                 if ui.small_button("Choisir une photo…").clicked() {
                     action = Action::Photo;
+                }
+                if p.photo.is_none()
+                    && p.links.commons_image.is_some()
+                    && ui.small_button("🌐 Télécharger la photo libre").on_hover_text("Wikimedia Commons, avec ses crédits").clicked()
+                {
+                    action = Action::Fetch;
                 }
                 if let Some(ph) = &p.photo {
                     let credit = [ph.author.as_deref(), ph.license.as_deref()].into_iter().flatten().collect::<Vec<_>>().join(" — ");
@@ -858,6 +1071,8 @@ fn editor_window(app: &mut App, ctx: &Context) {
         checks(ui, Moisture::ALL, &mut p.soil.moisture);
         ui.label("Usages");
         checks(ui, Use::ALL, &mut p.characteristics.uses);
+        field(ui, "Ambiances", p, "characteristics.ambiances");
+        checks(ui, Ambiance::ALL, &mut p.characteristics.ambiances);
         ui.label("Saisons d'intérêt");
         checks(ui, Season::ALL, &mut p.characteristics.interest_seasons);
         ui.label("Floraison");
@@ -907,6 +1122,10 @@ fn editor_window(app: &mut App, ctx: &Context) {
 
     match action {
         Action::None => {}
+        Action::Fetch => {
+            app.queue_photo(&ed.plant, true);
+            app.info("Téléchargement de la photo…");
+        }
         Action::Photo => {
             if let Some(src) = rfd::FileDialog::new().add_filter("Images", &["png", "jpg", "jpeg", "webp"]).pick_file() {
                 let stem =
@@ -958,6 +1177,7 @@ fn editor_window(app: &mut App, ctx: &Context) {
                         d.project.assign(&id, p);
                         app.info(format!("{} assignée à la zone.", p.display_name()));
                     }
+                    app.queue_photo(p, false);
                 }
             }
         }

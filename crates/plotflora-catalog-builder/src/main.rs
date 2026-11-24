@@ -13,10 +13,11 @@
 
 use calamine::{open_workbook_auto, Data, Reader};
 use plotflora_core::convert::plant_id;
-use plotflora_core::{Catalog, DataSource, Plant, SCHEMA_VERSION};
+use plotflora_core::search::normalize;
+use plotflora_core::{Ambiance, Catalog, DataSource, Plant, SCHEMA_VERSION};
 use plotflora_data::cache::LookupCache;
 use plotflora_data::eive::EiveIndex;
-use plotflora_data::online::Online;
+use plotflora_data::online::{Candidate, Online};
 use plotflora_data::{store, today};
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
@@ -166,6 +167,20 @@ fn read_eive(path: &Path, sheet: Option<&str>, cols: &[String; 4]) -> Result<BTr
     ))
 }
 
+/// Cherche un taxon sur Wikidata ; compare les noms normalisés (le « × » des hybrides est ignoré)
+/// et réessaie sans « × » si besoin.
+fn find_taxon(o: &Online, latin: &str) -> plotflora_data::Result<Option<Candidate>> {
+    let key = normalize(latin);
+    let pick = |list: Vec<Candidate>| list.into_iter().find(|c| normalize(&c.latin_name) == key);
+    if let Some(c) = pick(o.search_taxa(latin, false)?) {
+        return Ok(Some(c));
+    }
+    if latin.contains('×') {
+        return Ok(pick(o.search_taxa(&latin.replace('×', " "), false)?));
+    }
+    Ok(None)
+}
+
 fn run() -> Result<(), String> {
     let args = parse_args()?;
     let err = |e: plotflora_data::Error| e.to_string();
@@ -188,58 +203,113 @@ fn run() -> Result<(), String> {
     catalog.schema_version = SCHEMA_VERSION.into();
     let list = std::fs::read_to_string(species).map_err(|e| format!("{} : {e}", species.display()))?;
     let online = (!args.offline).then(|| Online::new(Arc::new(Mutex::new(LookupCache::load(Path::new("builder_cache.json"))))));
-    let (mut added, mut missing, mut failed) = (0, Vec::new(), Vec::new());
+    let entries: Vec<(&str, Vec<Ambiance>)> = list
+        .lines()
+        .map(str::trim)
+        .filter(|l| !l.is_empty() && !l.starts_with('#'))
+        .map(|l| {
+            let (name, tags) = l.split_once('|').unwrap_or((l, ""));
+            let ambiances = tags
+                .split(',')
+                .map(str::trim)
+                .filter(|t| !t.is_empty())
+                .filter_map(|t| t.parse().map_err(|e| eprintln!("{name} : {e}")).ok())
+                .collect();
+            (name.trim(), ambiances)
+        })
+        .collect();
+    let (mut added, mut updated, mut missing, mut failed) = (0, 0, Vec::new(), Vec::new());
+    let total = entries.len();
 
-    for latin in list.lines().map(str::trim).filter(|l| !l.is_empty() && !l.starts_with('#')) {
+    for (n, (latin, ambiances)) in entries.into_iter().enumerate() {
         let id = plant_id(latin, None);
-        if catalog.get(&id).is_some() {
-            continue;
-        }
-        let candidate = match &online {
-            Some(o) => match o.search_taxa(latin, false) {
-                Ok(list) => list.into_iter().find(|c| c.latin_name.eq_ignore_ascii_case(latin)),
+        let existing = catalog.plants.iter().position(|p| p.id == id || normalize(&p.latin_name) == normalize(latin));
+        let needs_links =
+            existing.is_none_or(|i| catalog.plants[i].links.commons_image.is_none() || catalog.plants[i].links.wikidata.is_none());
+        let candidate = match (&online, needs_links) {
+            (Some(o), true) => match find_taxon(o, latin) {
+                Ok(c) => c,
                 Err(e) => {
-                    eprintln!("{latin} : {e}");
+                    println!("[{}/{total}] {latin} : échec réseau ({e})", n + 1);
                     failed.push(latin.to_owned());
                     continue;
                 }
             },
-            None => None,
+            _ => None,
         };
-        let mut plant = match (&online, candidate) {
-            (Some(o), Some(c)) => {
-                let (p, warnings) = o.build_draft(&c, &eive, None, false);
-                for w in warnings {
-                    eprintln!("{latin} : {w}");
-                }
-                p
+        if let Some(i) = existing {
+            // Fiche existante : on complète seulement les ambiances et les liens.
+            let p = &mut catalog.plants[i];
+            let mut changed = false;
+            if p.characteristics.ambiances.is_empty() && !ambiances.is_empty() {
+                p.characteristics.ambiances = ambiances;
+                changed = true;
             }
-            _ => {
-                if online.is_some() {
-                    missing.push(latin.to_owned());
+            if let Some(c) = &candidate {
+                for (slot, value) in [
+                    (&mut p.links.wikidata, Some(c.qid.clone())),
+                    (&mut p.links.wikipedia_fr, c.frwiki.clone()),
+                    (&mut p.links.commons_image, c.image.clone()),
+                ] {
+                    if slot.is_none() && value.is_some() {
+                        *slot = value;
+                        changed = true;
+                    }
                 }
-                let mut p = Plant { id: id.clone(), common_name: latin.to_owned(), latin_name: latin.to_owned(), ..Plant::default() };
-                eive.apply(&mut p);
-                p
             }
-        };
-        plant.id = id;
-        plant.meta.source = DataSource::Seed;
-        plant.meta.verified = false;
-        plant.meta.updated_at = today();
-        catalog.plants.push(plant);
-        added += 1;
+            if changed {
+                updated += 1;
+            }
+            println!("[{}/{total}] {latin} : {}", n + 1, if changed { "complétée" } else { "déjà à jour" });
+        } else {
+            let mut plant = match (&online, candidate) {
+                (Some(o), Some(c)) => {
+                    let (p, warnings) = o.build_draft(&c, &eive, None, false);
+                    for w in warnings {
+                        eprintln!("{latin} : {w}");
+                    }
+                    println!("[{}/{total}] {latin} : ajoutée", n + 1);
+                    p
+                }
+                _ => {
+                    if online.is_some() {
+                        missing.push(latin.to_owned());
+                    }
+                    println!("[{}/{total}] {latin} : fiche minimale", n + 1);
+                    let mut p = Plant { common_name: latin.to_owned(), latin_name: latin.to_owned(), ..Plant::default() };
+                    eive.apply(&mut p);
+                    p
+                }
+            };
+            plant.id = id;
+            plant.characteristics.ambiances = ambiances;
+            plant.meta.source = DataSource::Seed;
+            plant.meta.verified = false;
+            plant.meta.updated_at = today();
+            catalog.plants.push(plant);
+            added += 1;
+        }
+        if (n + 1) % 25 == 0 {
+            store::write_json_atomic(&seed_path, &catalog).map_err(err)?;
+            if let Some(o) = &online {
+                o.save_cache().map_err(err)?;
+            }
+        }
     }
     if let Some(o) = &online {
         o.save_cache().map_err(err)?;
     }
     store::write_json_atomic(&seed_path, &catalog).map_err(err)?;
-    println!("Catalogue : {added} fiche(s) ajoutée(s), {} au total → {}", catalog.plants.len(), seed_path.display());
+    println!(
+        "Catalogue : {added} fiche(s) ajoutée(s), {updated} complétée(s), {} au total → {}",
+        catalog.plants.len(),
+        seed_path.display()
+    );
     if !missing.is_empty() {
         println!("Taxons introuvables sur Wikidata (fiches minimales créées) : {}", missing.join(", "));
     }
     if !failed.is_empty() {
-        println!("Échecs réseau, à relancer (les espèces déjà ajoutées sont ignorées) : {}", failed.join(", "));
+        println!("Échecs réseau, à relancer (les espèces déjà traitées sont ignorées) : {}", failed.join(", "));
     }
     Ok(())
 }

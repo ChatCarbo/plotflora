@@ -7,6 +7,7 @@
 #![warn(missing_debug_implementations)]
 
 pub mod convert;
+pub mod detect;
 pub mod geometry;
 pub mod model;
 pub mod scoring;

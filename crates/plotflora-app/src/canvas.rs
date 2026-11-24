@@ -38,8 +38,29 @@ pub fn status_color(s: Status) -> Color32 {
 
 const SELECT: Color32 = Color32::from_rgb(255, 235, 59);
 
+fn soil_color(t: Option<SoilType>) -> Color32 {
+    match t {
+        Some(SoilType::Loamy) => Color32::from_rgb(161, 136, 127),
+        Some(SoilType::Clay) => Color32::from_rgb(214, 120, 70),
+        Some(SoilType::Sandy) => Color32::from_rgb(240, 210, 130),
+        Some(SoilType::Chalky) => Color32::from_rgb(225, 225, 215),
+        Some(SoilType::Humus) => Color32::from_rgb(110, 80, 55),
+        None => Color32::from_gray(170),
+    }
+}
+
 /// Emprise du contenu en unités du plan.
 fn bounds(app: &App, image: Option<Vec2>) -> (Pt, Pt) {
+    // Contour du jardin connu : on cadre dessus, avec une petite marge.
+    if let Some(b) = app.doc.as_ref().and_then(|d| d.project.map.boundary.as_ref()).filter(|b| b.len() >= 3) {
+        let (mut lo, mut hi) = ([f64::MAX; 2], [f64::MIN; 2]);
+        for p in b {
+            lo = [lo[0].min(p[0]), lo[1].min(p[1])];
+            hi = [hi[0].max(p[0]), hi[1].max(p[1])];
+        }
+        let m = (hi[0] - lo[0]).max(hi[1] - lo[1]) * 0.04;
+        return ([lo[0] - m, lo[1] - m], [hi[0] + m, hi[1] + m]);
+    }
     if let Some(sz) = image {
         return ([0.0, 0.0], [f64::from(sz.x), f64::from(sz.y)]);
     }
@@ -163,10 +184,17 @@ fn handle_tools(app: &mut App, resp: &egui::Response, rect: Rect) {
         app.draft.clear();
         app.scale_points = None;
     }
+    if app.tool == Tool::Detect {
+        if let Some(p) = click {
+            app.detect_garden(p);
+        }
+        return;
+    }
     let Some(doc) = app.doc.as_mut() else { return };
     let project = &mut doc.project;
 
     match app.tool {
+        Tool::Detect => {}
         Tool::Select => {
             if resp.drag_started_by(PointerButton::Primary) {
                 if let Some(p) = resp.interact_pointer_pos().map(|s| tr.p(s)) {
@@ -176,19 +204,26 @@ fn handle_tools(app: &mut App, resp: &egui::Response, rect: Rect) {
                         .and_then(|id| project.zone(id))
                         .and_then(|z| z.points.iter().position(|v| dist(*v, p) <= tol));
                     let hit = project.zones.iter().rev().find(|z| hit_test(z, p, tol)).map(|z| z.id.clone());
-                    app.drag = match (vertex, hit) {
-                        (Some(i), _) => Drag::Vertex(i),
-                        (None, Some(id)) => {
+                    let corner = project.map.boundary.as_ref().and_then(|b| b.iter().position(|v| dist(*v, p) <= tol));
+                    app.drag = match (vertex, hit, corner) {
+                        (Some(i), _, _) => Drag::Vertex(i),
+                        (None, Some(id), _) => {
                             app.selected = Some(id);
                             Drag::Zone
                         }
-                        (None, None) => Drag::Pan,
+                        (None, None, Some(i)) => Drag::Boundary(i),
+                        (None, None, None) => Drag::Pan,
                     };
                 }
             }
             if resp.dragged_by(PointerButton::Primary) {
                 let d = resp.drag_delta() / tr.zoom;
                 let d = [f64::from(d.x), f64::from(d.y)];
+                if let Drag::Boundary(i) = app.drag {
+                    if let Some(v) = project.map.boundary.as_mut().and_then(|b| b.get_mut(i)) {
+                        *v = [v[0] + d[0], v[1] + d[1]];
+                    }
+                }
                 if let Some(z) = app.selected.as_deref().and_then(|id| project.zone_mut(id)) {
                     match app.drag {
                         Drag::Vertex(i) => {
@@ -197,7 +232,7 @@ fn handle_tools(app: &mut App, resp: &egui::Response, rect: Rect) {
                             }
                         }
                         Drag::Zone => z.points.iter_mut().for_each(|v| *v = [v[0] + d[0], v[1] + d[1]]),
-                        Drag::Pan | Drag::None => {}
+                        Drag::Pan | Drag::None | Drag::Boundary(_) => {}
                     }
                 }
             }
@@ -218,7 +253,7 @@ fn handle_tools(app: &mut App, resp: &egui::Response, rect: Rect) {
                 app.tab = Tab::Zone;
             }
         }
-        Tool::Area | Tool::Line | Tool::Boundary | Tool::Obstacle => {
+        Tool::Area | Tool::Line | Tool::Boundary | Tool::Obstacle | Tool::Sector => {
             if app.tool == Tool::Obstacle && app.obstacle_kind == ObstacleKind::ExistingTree {
                 if let Some(p) = click {
                     project.map.obstacles.push(Obstacle {
@@ -246,6 +281,11 @@ fn handle_tools(app: &mut App, resp: &egui::Response, rect: Rect) {
                         project.map.boundary = Some(pts);
                         app.tool = Tool::Select;
                         msg = Some(Ok("Contour du terrain enregistré."));
+                    }
+                    Tool::Sector if is_simple_polygon(&pts) => {
+                        project.add_sector(pts);
+                        (app.tool, app.tab) = (Tool::Select, Tab::Garden);
+                        msg = Some(Ok("Secteur de sol ajouté : choisissez son sol dans l'onglet Jardin."));
                     }
                     Tool::Obstacle if is_simple_polygon(&pts) => {
                         project.map.obstacles.push(Obstacle { kind: app.obstacle_kind, points: pts, ..Obstacle::default() });
@@ -333,8 +373,28 @@ fn draw(
         }
     }
     if let Some(b) = &map.boundary {
-        fill_polygon(painter, tr, b, Color32::from_rgba_unmultiplied(110, 140, 80, 40));
-        painter.add(Shape::closed_line(b.iter().map(|p| tr.s(*p)).collect(), Stroke::new(2.0_f32, Color32::from_gray(230))));
+        if map.source == MapSource::Drawing {
+            fill_polygon(painter, tr, b, Color32::from_rgba_unmultiplied(110, 140, 80, 40));
+        }
+        painter.add(Shape::closed_line(b.iter().map(|p| tr.s(*p)).collect(), Stroke::new(2.5_f32, Color32::WHITE)));
+        if app.tool == Tool::Select {
+            for p in b {
+                painter.rect_stroke(Rect::from_center_size(tr.s(*p), vec2(7.0, 7.0)), 1.0, Stroke::new(1.5_f32, Color32::WHITE));
+            }
+        }
+    }
+    // Secteurs de sol
+    for s in &project.soil_sectors {
+        if s.points.len() < 3 {
+            continue;
+        }
+        let col = soil_color(s.soil_type);
+        fill_polygon(painter, tr, &s.points, col.gamma_multiply(0.3));
+        painter.add(Shape::closed_line(s.points.iter().map(|p| tr.s(*p)).collect(), Stroke::new(1.5_f32, col)));
+        if let Some(a) = plotflora_core::geometry::polygon_label_anchor(&s.points) {
+            let soil = s.soil_type.map_or("sol du jardin", SoilType::label);
+            text_box(painter, tr.s(a), Align2::CENTER_CENTER, format!("{} : {}", s.label, soil.to_lowercase()), 11.0);
+        }
     }
     for o in &map.obstacles {
         match (o.center, o.radius_m) {

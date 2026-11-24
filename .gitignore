@@ -1,3 +1,4 @@
 /target
 /builder_cache.json
 *.xlsx
+*.bak

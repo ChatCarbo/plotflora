@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/logo.png" alt="PlotFlora" width="520"></p>
 
-# PlotFlora 1.1
+# PlotFlora 1.2
 
 PlotFlora est un logiciel libre et local pour planifier son jardin. Sur une vue aérienne IGN ou un plan dessiné, placez plantes isolées, massifs et haies, décrivez soleil, sol et climat : un algorithme explicable classe sur 100 points les plantes les mieux adaptées et calcule les quantités à planter.
 
@@ -12,7 +12,24 @@ PlotFlora est un logiciel libre et local pour planifier son jardin. Sur une vue 
   <img src="docs/captures/accueil.png" alt="Écran d'accueil" width="600">
 </p>
 
-Spécification : `plotflora_specifications_v1.1.md`.
+📖 **[Mode d'emploi](docs/MODE_D_EMPLOI.md)** · Spécification : [`plotflora_specifications_v1.2.md`](plotflora_specifications_v1.2.md)
+
+## Nouveautés 1.2
+
+- **Détection du jardin** : à la création d'un projet sur vue aérienne, cliquez au milieu du jardin ;
+  PlotFlora détecte son contour (zone de couleur proche, tolérance réglable) et cadre la vue dessus.
+  Le contour reste modifiable : glissez ses sommets blancs avec l'outil Sélection, ou tracez-le à la main.
+- **Ambiances** : choisissez une ambiance pour le jardin (méditerranéen, japonais, champêtre,
+  contemporain, sous-bois, nourricier, sauvage, exotique) ou pour une zone ; elle entre dans le score
+  avec la compatibilité du sol. L'onglet **Idées** propose les plantes adaptées à une ambiance, un sol
+  (jardin ou secteur), une exposition et une hauteur.
+- **Catalogue de ~630 plantes et arbres de jardin** (`assets/seed_species.txt`, espèces envahissantes
+  exclues), chacune rattachée à ses ambiances.
+- **Photos à la demande** : le catalogue ne contient que la référence de la photo libre (Wikimedia
+  Commons) ; elle est téléchargée, avec ses crédits, quand la plante est ajoutée au jardin
+  (désactivable dans Options).
+- **Secteurs de sol** : tracez des parties du jardin au sol différent (type, drainage, pH). Chaque zone
+  de plantation utilise le sol de son secteur, complété par celui du jardin ; l'algorithme en tient compte.
 
 ## Structure
 
@@ -49,9 +66,8 @@ une version de PlotFlora pour préparer les deux fichiers de données intégrés
 1. Télécharger le classeur EIVE (Tichý et al. 2023, CC BY 4.0) : <https://doi.org/10.5281/zenodo.7427088>.
 2. Lancer :
 
-```sh
-cargo run -p plotflora-catalog-builder -- --eive Indicator.values-tables-2022-11-07-Zenodo.v2.xlsx \
-    --species assets/seed_species.txt --out assets
+```powershell
+cargo run -p plotflora-catalog-builder -- --eive Indicator.values-tables-2022-11-07-Zenodo.v2.xlsx --species assets/seed_species.txt --out assets
 ```
 
 Si une colonne n'est pas trouvée, l'outil affiche les en-têtes disponibles : précisez-les avec

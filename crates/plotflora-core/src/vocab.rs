@@ -139,6 +139,19 @@ vocab!(ObstacleKind {
     Other = "other": "Autre",
 });
 vocab!(MapSource { Image = "image": "Image aérienne", Drawing = "drawing": "Plan dessiné" });
+vocab!(
+    /// Ambiance (style) de jardin, pour orienter les conseils.
+    Ambiance {
+        Mediterranean = "mediterranean": "Méditerranéen",
+        Japanese = "japanese": "Japonais / zen",
+        Cottage = "cottage": "Champêtre / cottage",
+        Contemporary = "contemporary": "Contemporain / graphique",
+        Woodland = "woodland": "Sous-bois / ombre",
+        Edible = "edible": "Nourricier / potager",
+        Wildlife = "wildlife": "Sauvage / biodiversité",
+        Exotic = "exotic": "Exotique",
+    }
+);
 vocab!(DataSource {
     Manual = "manual": "Saisie manuelle",
     Seed = "seed": "Catalogue embarqué",

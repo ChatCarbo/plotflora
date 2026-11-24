@@ -10,8 +10,13 @@ pub const UNKNOWN: &str = "Inconnu";
 
 /// Liste déroulante pour une valeur facultative (« Inconnu » = `None`).
 pub fn opt_combo<T: Copy + PartialEq + Display>(ui: &mut Ui, id: &str, all: &[T], v: &mut Option<T>) {
-    egui::ComboBox::new(id, "").selected_text(v.map_or_else(|| UNKNOWN.to_owned(), |x| x.to_string())).show_ui(ui, |ui| {
-        ui.selectable_value(v, None, UNKNOWN);
+    opt_combo_with(ui, id, all, v, UNKNOWN);
+}
+
+/// Comme [`opt_combo`], avec un libellé personnalisé pour `None`.
+pub fn opt_combo_with<T: Copy + PartialEq + Display>(ui: &mut Ui, id: &str, all: &[T], v: &mut Option<T>, none: &str) {
+    egui::ComboBox::new(id, "").selected_text(v.map_or_else(|| none.to_owned(), |x| x.to_string())).show_ui(ui, |ui| {
+        ui.selectable_value(v, None, none);
         for a in all {
             ui.selectable_value(v, Some(*a), a.to_string());
         }

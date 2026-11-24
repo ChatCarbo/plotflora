@@ -43,7 +43,7 @@ impl Criterion {
             Self::Water => "Sécheresse & arrosage",
             Self::Soil => "Sol & humidité",
             Self::Size => "Dimensions",
-            Self::Uses => "Usages & feuillage",
+            Self::Uses => "Usages, feuillage & ambiance",
             Self::CareWind => "Entretien & vent",
         }
     }
@@ -146,6 +146,25 @@ impl Ctx {
 
 fn fmt_m(v: f64) -> String {
     format!("{v:.2}").trim_end_matches('0').trim_end_matches('.').replace('.', ",")
+}
+
+/// Adéquation d'une plante à une ambiance : 1000 si elle y est rattachée explicitement,
+/// 600 si ses caractéristiques s'y prêtent, 0 sinon.
+pub fn ambiance_fit(p: &Plant, amb: Ambiance) -> u32 {
+    if p.characteristics.ambiances.contains(&amb) {
+        return FULL;
+    }
+    let c = &p.characteristics;
+    let shade = p.exposure.ideal.iter().any(|s| matches!(s, Sun::LightShade | Sun::DenseShade));
+    let fits = match amb {
+        Ambiance::Mediterranean => p.climate.drought_tolerance == Some(Level::High) && p.exposure.ideal.contains(&Sun::FullSun),
+        Ambiance::Woodland => shade,
+        Ambiance::Edible => c.uses.iter().any(|u| matches!(u, Use::EdibleFruit | Use::EdibleLeaf)),
+        Ambiance::Wildlife => c.uses.contains(&Use::Pollinator),
+        Ambiance::Cottage => c.uses.contains(&Use::Ornamental) && c.uses.contains(&Use::Pollinator) && c.flowering_months.len() >= 2,
+        Ambiance::Japanese | Ambiance::Contemporary | Ambiance::Exotic => false,
+    };
+    if fits { 600 } else { 0 }
 }
 
 /// Évalue une plante pour une zone. `meters_per_unit` sert au calcul des quantités.
@@ -328,7 +347,18 @@ pub fn evaluate(env: &Environment, zone: &Zone, p: &Plant, meters_per_unit: Opti
             0
         }
     };
-    let c6 = (700 * u + 300 * f) / 1000;
+    let c6 = match zone.ambiance.or(env.ambiance) {
+        None => (700 * u + 300 * f) / 1000,
+        Some(amb) => {
+            let a = ambiance_fit(p, amb);
+            match a {
+                FULL => reasons.push(format!("Correspond à l'ambiance « {} »", amb.label())),
+                0 => x.info(format!("Hors de l'ambiance « {} »", amb.label())),
+                _ => x.info(format!("Compatible avec l'ambiance « {} » (d'après ses caractéristiques)", amb.label())),
+            }
+            (500 * u + 200 * f + 300 * a) / 1000
+        }
+    };
     if c6 == FULL {
         reasons.push("Usages et feuillage conformes".into());
     }
@@ -421,6 +451,7 @@ mod tests {
             soil_drainage: Some(Drainage::Good),
             soil_ph: Some(Ph::Neutral),
             watering_availability: Some(Level::Medium),
+            ambiance: None,
         }
     }
 
@@ -548,6 +579,22 @@ mod tests {
         let mut z = zone();
         z.status = Status::Existing;
         assert!(recommend(&env(), &z, [&l], None).is_empty());
+    }
+
+    #[test]
+    fn ambiance_enters_uses_criterion() {
+        let mut e = env();
+        e.ambiance = Some(Ambiance::Mediterranean);
+        // Lavande : tolérance à la sécheresse élevée + plein soleil → compatible par ses caractéristiques (600).
+        let r = evaluate(&e, &zone(), &lavender(), None);
+        assert_eq!(r.breakdown[5].points, 9); // (500·1000 + 200·1000 + 300·600) / 1000 = 880 → 9
+        let mut l = lavender();
+        l.characteristics.ambiances = vec![Ambiance::Mediterranean];
+        assert_eq!(evaluate(&e, &zone(), &l, None).breakdown[5].points, 10);
+        // L'ambiance de la zone remplace celle du jardin.
+        let mut z = zone();
+        z.ambiance = Some(Ambiance::Woodland);
+        assert_eq!(evaluate(&e, &z, &l, None).breakdown[5].points, 7); // 700 → 7
     }
 
     #[test]

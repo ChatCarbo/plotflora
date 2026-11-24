@@ -41,6 +41,8 @@ pub enum Tool {
     Scale,
     Measure,
     North,
+    Detect,
+    Sector,
 }
 
 impl Tool {
@@ -58,6 +60,8 @@ impl Tool {
             Self::Scale => "Cliquez les deux extrémités d'une longueur connue",
             Self::Measure => "Cliquez deux points pour mesurer",
             Self::North => "Cliquez dans la direction du Nord (depuis le centre de la vue)",
+            Self::Detect => "Cliquez au milieu du jardin : son contour est détecté automatiquement (réglez la tolérance si besoin)",
+            Self::Sector => "Clics : contour du secteur de sol · double-clic ou Entrée : terminer · Échap : abandonner",
         }
     }
 }
@@ -67,6 +71,23 @@ pub enum Tab {
     Garden,
     Zone,
     Catalog,
+    Ideas,
+}
+
+/// Réglages de l'onglet « Idées ».
+#[derive(Debug, Clone, PartialEq, Default)]
+pub struct IdeasQuery {
+    pub ambiance: Option<Ambiance>,
+    pub sun: Option<Sun>,
+    pub sector: Option<String>,
+    pub category: Option<Category>,
+    pub max_height_m: Option<f64>,
+}
+
+/// Résultat mis en cache de l'onglet « Idées ».
+pub struct IdeasCache {
+    pub key: (IdeasQuery, Environment, u64),
+    pub list: Vec<Recommendation>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -75,6 +96,7 @@ pub enum Drag {
     Pan,
     Zone,
     Vertex(usize),
+    Boundary(usize),
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -104,6 +126,16 @@ pub struct RecCache {
 pub struct Editor {
     pub plant: Plant,
     pub is_new: bool,
+}
+
+/// Image réduite gardée en mémoire pour la détection du contour.
+struct DetectCache {
+    path: PathBuf,
+    w: usize,
+    h: usize,
+    kx: f64,
+    ky: f64,
+    rgb: Vec<u8>,
 }
 
 pub enum OnlineMsg {
@@ -142,7 +174,15 @@ pub struct App {
     pub confirm_close: bool,
     allow_close: bool,
     pub scale_points: Option<(Pt, Pt)>,
+    /// Télécharger la photo Commons d'une plante quand elle est ajoutée au jardin.
+    pub auto_photos: bool,
+    photo_queue: Vec<(String, String)>,
+    photo_task: Option<mpsc::Receiver<(String, Result<Photo, String>)>>,
+    pub ideas: IdeasQuery,
+    pub ideas_cache: Option<IdeasCache>,
     pub scale_distance: f64,
+    pub detect_tolerance: f64,
+    detect_cache: Option<DetectCache>,
     title: String,
     pub icon: Option<TextureHandle>,
     pub logo: Option<TextureHandle>,
@@ -216,7 +256,14 @@ impl App {
             confirm_close: false,
             allow_close: false,
             scale_points: None,
+            auto_photos: true,
+            photo_queue: Vec::new(),
+            photo_task: None,
+            ideas: IdeasQuery::default(),
+            ideas_cache: None,
             scale_distance: 10.0,
+            detect_tolerance: 40.0,
+            detect_cache: None,
             title: String::new(),
             icon: embedded_texture(&cc.egui_ctx, "icon", include_bytes!("../../../assets/icon.png")),
             logo: embedded_texture(&cc.egui_ctx, "logo", include_bytes!("../../../assets/logo_dark.png")),
@@ -291,10 +338,10 @@ impl App {
         match store::save_project(&path, &mut project) {
             Ok(()) => {
                 self.set_doc(project, path);
-                self.tool = if source == MapSource::Drawing { Tool::Boundary } else { Tool::Scale };
+                self.tool = if source == MapSource::Drawing { Tool::Boundary } else { Tool::Detect };
                 self.tab = Tab::Garden;
                 self.info(match source {
-                    MapSource::Image => "Projet créé. Calibrez l'échelle : cliquez les extrémités d'une longueur connue.",
+                    MapSource::Image => "Projet créé. Cliquez au milieu du jardin pour détecter ses limites (ou tracez le contour), puis calibrez l'échelle.",
                     MapSource::Drawing => "Projet créé. Tracez le contour du terrain.",
                 });
             }
@@ -349,6 +396,49 @@ impl App {
         }
         doc.path = new_path;
         self.save();
+    }
+
+    /// Détecte le contour du jardin autour du point `p` (pixels de l'image) et recadre la vue.
+    pub fn detect_garden(&mut self, p: Pt) {
+        let Some(path) = self.image_path() else { return };
+        if self.detect_cache.as_ref().map(|c| &c.path) != Some(&path) {
+            let img = match image::open(&path) {
+                Ok(i) => i,
+                Err(e) => return self.error(format!("Image illisible : {e}")),
+            };
+            let (ow, oh) = (img.width(), img.height());
+            let small = if ow.max(oh) > 640 { img.thumbnail(640, 640) } else { img };
+            let rgb = small.to_rgb8();
+            let (w, h) = (rgb.width(), rgb.height());
+            self.detect_cache = Some(DetectCache {
+                path,
+                w: w as usize,
+                h: h as usize,
+                kx: f64::from(ow) / f64::from(w.max(1)),
+                ky: f64::from(oh) / f64::from(h.max(1)),
+                rgb: rgb.into_raw(),
+            });
+        }
+        let Some((kx, ky)) = self.detect_cache.as_ref().map(|c| (c.kx, c.ky)) else { return };
+        let (sx, sy) = (p[0] / kx, p[1] / ky);
+        if !(sx >= 0.0 && sy >= 0.0) {
+            return self.error("Cliquez à l'intérieur de l'image.");
+        }
+        let res = match self.detect_cache.as_ref() {
+            Some(c) => plotflora_core::detect::detect_region(c.w, c.h, &c.rgb, (sx as usize, sy as usize), self.detect_tolerance),
+            None => return,
+        };
+        match res {
+            Ok(poly) => {
+                if let Some(d) = self.doc.as_mut() {
+                    d.project.map.boundary = Some(poly.into_iter().map(|q| [q[0] * kx, q[1] * ky]).collect());
+                }
+                self.view.fitted = false;
+                self.tool = Tool::Select;
+                self.info("Contour du jardin détecté. Ajustez les sommets blancs si besoin, puis calibrez l'échelle.");
+            }
+            Err(e) => self.error(format!("Détection : {e}.")),
+        }
     }
 
     pub fn relink_image(&mut self) {
@@ -466,6 +556,73 @@ impl App {
     /// Fiche d'une plante assignée : catalogue, sinon copie du projet.
     pub fn assigned_plant(&self, id: &str) -> Option<&Plant> {
         self.catalog.get(id).or_else(|| self.doc.as_ref()?.project.plants_snapshot.get(id))
+    }
+
+    // ---------- Photos à la demande ----------
+
+    /// Met en file le téléchargement de la photo Commons d'une plante (si elle n'en a pas).
+    /// `force` ignore le réglage « photos automatiques » (demande explicite).
+    pub fn queue_photo(&mut self, plant: &Plant, force: bool) {
+        if (!self.auto_photos && !force) || plant.photo.is_some() || plant.id.is_empty() {
+            return;
+        }
+        let Some(file) = plant.links.commons_image.clone() else { return };
+        if !self.photo_queue.iter().any(|(id, _)| *id == plant.id) {
+            self.photo_queue.push((plant.id.clone(), file));
+        }
+    }
+
+    pub fn photos_pending(&self) -> usize {
+        self.photo_queue.len() + usize::from(self.photo_task.is_some())
+    }
+
+    fn pump_photos(&mut self, ctx: &egui::Context) {
+        if let Some(rx) = &self.photo_task {
+            match rx.try_recv() {
+                Ok((id, res)) => {
+                    self.photo_task = None;
+                    self.apply_photo(&id, res);
+                }
+                Err(mpsc::TryRecvError::Empty) => return,
+                Err(mpsc::TryRecvError::Disconnected) => self.photo_task = None,
+            }
+        }
+        if self.photo_queue.is_empty() {
+            return;
+        }
+        let (id, file) = self.photo_queue.remove(0);
+        let (tx, rx) = mpsc::channel();
+        let online = self.online.clone();
+        let dir = self.data_dir.join("photos");
+        let ctx = ctx.clone();
+        std::thread::spawn(move || {
+            let res = online.commons_photo(&file, &dir, &id, false).map_err(|e| e.to_string());
+            let _ = online.save_cache();
+            let _ = tx.send((id, res));
+            ctx.request_repaint();
+        });
+        self.photo_task = Some(rx);
+    }
+
+    fn apply_photo(&mut self, id: &str, res: Result<Photo, String>) {
+        let photo = match res {
+            Ok(p) => p,
+            Err(e) => return self.error(format!("Photo indisponible : {e}")),
+        };
+        if let Some(ed) = self.editor.as_mut().filter(|e| e.plant.id == id && e.plant.photo.is_none()) {
+            ed.plant.photo = Some(photo.clone());
+        }
+        if let Some(s) = self.doc.as_mut().and_then(|d| d.project.plants_snapshot.get_mut(id)) {
+            s.photo = Some(photo.clone());
+        }
+        if let Some(mut plant) = self.catalog.get(id).cloned() {
+            if plant.photo.is_none() {
+                plant.photo = Some(photo);
+                let name = plant.display_name();
+                self.save_plant(plant);
+                self.info(format!("Photo de {name} téléchargée."));
+            }
+        }
     }
 
     // ---------- Tâches en ligne ----------
@@ -617,6 +774,7 @@ impl App {
 impl eframe::App for App {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         self.poll_task();
+        self.pump_photos(ctx);
         self.shortcuts(ctx);
         panels::menu_bar(self, ctx);
         panels::status_bar(self, ctx);

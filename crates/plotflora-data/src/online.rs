@@ -269,6 +269,7 @@ impl Online {
         };
         p.links.wikidata = Some(c.qid.clone());
         p.links.wikipedia_fr = c.frwiki.clone();
+        p.links.commons_image = c.image.clone();
         p.meta.source = DataSource::Mixed;
         p.meta.verified = false;
         p.meta.updated_at = today();

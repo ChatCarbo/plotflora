@@ -10,7 +10,7 @@ use std::collections::BTreeMap;
 pub type Pt = [f64; 2];
 
 /// Version de schéma écrite par cette version du logiciel.
-pub const SCHEMA_VERSION: &str = "1.1.0";
+pub const SCHEMA_VERSION: &str = "1.2.0";
 
 macro_rules! data {
     ($($item:item)+) => {$(
@@ -63,6 +63,8 @@ data! {
         pub interest_seasons: Vec<Season>,
         pub flower_color: Option<String>,
         pub autumn_color: Option<String>,
+        /// Ambiances de jardin auxquelles la plante convient.
+        pub ambiances: Vec<Ambiance>,
     }
 
     pub struct Care {
@@ -76,6 +78,8 @@ data! {
     pub struct Links {
         pub wikidata: Option<String>,
         pub wikipedia_fr: Option<String>,
+        /// Nom du fichier photo sur Wikimedia Commons, téléchargé seulement à l'ajout au jardin.
+        pub commons_image: Option<String>,
     }
 
     pub struct Meta {
@@ -117,6 +121,8 @@ data! {
         pub soil_drainage: Option<Drainage>,
         pub soil_ph: Option<Ph>,
         pub watering_availability: Option<Level>,
+        /// Ambiance recherchée pour le jardin (`None` = aucune).
+        pub ambiance: Option<Ambiance>,
     }
 
     pub struct Zone {
@@ -137,6 +143,8 @@ data! {
         pub assigned_plant_id: Option<String>,
         pub quantity_override: Option<u32>,
         pub custom_photo_path: Option<String>,
+        /// Ambiance propre à la zone (`None` = celle du jardin).
+        pub ambiance: Option<Ambiance>,
         pub notes: String,
     }
 
@@ -152,6 +160,17 @@ data! {
         pub center: Option<Pt>,
         pub radius_m: Option<f64>,
         pub height_m: Option<f64>,
+    }
+
+    /// Secteur de sol : polygone dont les valeurs renseignées remplacent celles du jardin
+    /// pour les zones qu'il contient (`None` = valeur du jardin).
+    pub struct SoilSector {
+        pub id: String,
+        pub label: String,
+        pub points: Vec<Pt>,
+        pub soil_type: Option<SoilType>,
+        pub soil_drainage: Option<Drainage>,
+        pub soil_ph: Option<Ph>,
     }
 
     pub struct MapDef {
@@ -175,6 +194,7 @@ impl Default for Project {
             environment: Environment::default(),
             next_zone_seq: 1,
             zones: Vec::new(),
+            soil_sectors: Vec::new(),
             plants_snapshot: BTreeMap::new(),
         }
     }
@@ -190,6 +210,8 @@ pub struct Project {
     pub environment: Environment,
     pub next_zone_seq: u32,
     pub zones: Vec<Zone>,
+    /// Secteurs de sol ; en cas de chevauchement, le dernier tracé l'emporte.
+    pub soil_sectors: Vec<SoilSector>,
     /// Copie des fiches assignées, pour que le projet reste lisible sans le catalogue.
     pub plants_snapshot: BTreeMap<String, Plant>,
 }
@@ -254,6 +276,36 @@ impl Project {
         z.assigned_plant_id = Some(plant.id.clone());
         self.plants_snapshot.insert(plant.id.clone(), plant.clone());
         true
+    }
+
+    /// Ajoute un secteur de sol (identifiant `s_N` libre).
+    pub fn add_sector(&mut self, points: Vec<Pt>) -> &mut SoilSector {
+        let n =
+            (self.soil_sectors.len() + 1..).find(|n| !self.soil_sectors.iter().any(|s| s.id == format!("s_{n}"))).expect("suite infinie");
+        self.soil_sectors.push(SoilSector { id: format!("s_{n}"), label: format!("Secteur {n}"), points, ..SoilSector::default() });
+        self.soil_sectors.last_mut().expect("secteur ajouté")
+    }
+
+    /// Secteur de sol contenant la zone (point d'ancrage de la zone), le plus récent d'abord.
+    pub fn sector_for(&self, zone: &Zone) -> Option<&SoilSector> {
+        let a = crate::geometry::label_anchor(zone)?;
+        self.soil_sectors.iter().rev().find(|s| s.points.len() >= 3 && crate::geometry::point_in_polygon(a, &s.points))
+    }
+
+    /// Contexte effectif d'une zone : celui du jardin, corrigé par son secteur de sol.
+    pub fn environment_for(&self, zone: &Zone) -> Environment {
+        self.environment_with(self.sector_for(zone))
+    }
+
+    /// Contexte du jardin corrigé par un secteur de sol donné (ou aucun).
+    pub fn environment_with(&self, sector: Option<&SoilSector>) -> Environment {
+        let mut e = self.environment.clone();
+        if let Some(s) = sector {
+            e.soil_type = s.soil_type.or(e.soil_type);
+            e.soil_drainage = s.soil_drainage.or(e.soil_drainage);
+            e.soil_ph = s.soil_ph.or(e.soil_ph);
+        }
+        e
     }
 
     /// Supprime les copies de fiches qui ne sont plus assignées.
@@ -346,6 +398,8 @@ impl Plant {
         list(&mut self.tags, &o.tags, "tags", out);
         opt(&mut self.links.wikidata, &o.links.wikidata, "links.wikidata", out);
         opt(&mut self.links.wikipedia_fr, &o.links.wikipedia_fr, "links.wikipedia_fr", out);
+        opt(&mut self.links.commons_image, &o.links.commons_image, "links.commons_image", out);
+        list(&mut self.characteristics.ambiances, &o.characteristics.ambiances, "characteristics.ambiances", out);
         for f in out.iter() {
             if let Some(src) = o.meta.field_sources.get(*f) {
                 self.meta.field_sources.insert((*f).to_owned(), src.clone());
@@ -401,6 +455,24 @@ mod tests {
         assert_eq!(filled, vec!["care.water_need"]);
         assert_eq!((a.common_name.as_str(), a.climate.min_temp_c), ("A", Some(-10)));
         assert_eq!(a.meta.uncertain_fields, vec!["care.water_need".to_string()]);
+    }
+
+    #[test]
+    fn soil_sectors_override_garden() {
+        let mut p = Project::default();
+        p.environment.soil_type = Some(SoilType::Loamy);
+        p.environment.soil_ph = Some(Ph::Neutral);
+        let inside = p.add_zone(ZoneKind::Point, vec![[5.0, 5.0]]).clone();
+        let outside = p.add_zone(ZoneKind::Point, vec![[50.0, 5.0]]).clone();
+        let s = p.add_sector(vec![[0.0, 0.0], [10.0, 0.0], [10.0, 10.0], [0.0, 10.0]]);
+        s.soil_type = Some(SoilType::Clay);
+        assert_eq!(s.id, "s_1");
+        let e = p.environment_for(&inside);
+        assert_eq!((e.soil_type, e.soil_ph), (Some(SoilType::Clay), Some(Ph::Neutral)));
+        assert_eq!(p.environment_for(&outside).soil_type, Some(SoilType::Loamy));
+        // Le secteur tracé en dernier l'emporte.
+        p.add_sector(vec![[4.0, 4.0], [6.0, 4.0], [6.0, 6.0], [4.0, 6.0]]).soil_type = Some(SoilType::Sandy);
+        assert_eq!(p.environment_for(&inside).soil_type, Some(SoilType::Sandy));
     }
 
     #[test]

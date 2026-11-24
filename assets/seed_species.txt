@@ -1,66 +1,632 @@
-# Espèces de départ du catalogue embarqué (un nom latin par ligne).
-# Les espèces déjà présentes dans plants_catalog.seed.json sont ignorées.
-Abelia × grandiflora
-Achillea millefolium
-Ajuga reptans
-Alchemilla mollis
-Aster amellus
-Berberis thunbergii
-Buddleja davidii
-Buxus sempervirens
-Calluna vulgaris
-Campanula portenschlagiana
-Carpinus betulus
-Ceanothus thyrsiflorus
-Cercis siliquastrum
-Choisya ternata
-Cistus × purpureus
-Corylus avellana
-Cotinus coggygria
-Crataegus monogyna
-Deutzia gracilis
-Erigeron karvinskianus
-Escallonia rubra
-Euonymus europaeus
-Fagus sylvatica
-Ficus carica
-Forsythia × intermedia
-Fragaria vesca
-Gaura lindheimeri
-Helleborus orientalis
-Hemerocallis fulva
-Heuchera micrantha
-Hibiscus syriacus
-Hosta plantaginea
-Ilex aquifolium
-Lagerstroemia indica
-Ligustrum vulgare
-Lonicera periclymenum
-Mahonia aquifolium
-Nepeta × faassenii
-Olea europaea
-Origanum vulgare
-Osmanthus × burkwoodii
-Parthenocissus quinquefolia
-Perovskia atriplicifolia
-Philadelphus coronarius
-Photinia × fraseri
-Pittosporum tobira
-Prunus avium
-Pyracantha coccinea
-Ribes rubrum
-Rosa rugosa
-Rosmarinus officinalis
-Rudbeckia fulgida
-Sambucus nigra
-Sedum spectabile
-Spiraea japonica
-Syringa vulgaris
-Taxus baccata
-Thymus vulgaris
-Trachelospermum jasminoides
-Viburnum opulus
-Viburnum tinus
-Vinca minor
-Weigela florida
-Wisteria sinensis
+# Espèces du catalogue embarqué : « Nom latin | ambiance, ambiance ».
+# Ambiances : mediterranean, japanese, cottage, contemporary, woodland, edible, wildlife, exotic.
+# Les espèces envahissantes en France sont volontairement exclues.
+# Les espèces déjà présentes dans plants_catalog.seed.json sont complétées (ambiances, photo, liens) sans être écrasées.
+Acer campestre | wildlife
+Acer platanoides | wildlife
+Acer pseudoplatanus | wildlife
+Acer rubrum | contemporary
+Acer griseum | japanese, contemporary
+Acer japonicum | japanese
+Acer palmatum | japanese, woodland
+Aesculus hippocastanum | wildlife
+Aesculus × carnea | cottage
+Albizia julibrissin | exotic, mediterranean
+Alnus glutinosa | wildlife
+Amelanchier lamarckii | wildlife, edible, cottage
+Amelanchier canadensis | wildlife, edible
+Araucaria araucana | exotic, contemporary
+Arbutus unedo | mediterranean, edible, wildlife
+Betula pendula | woodland, wildlife
+Betula utilis | contemporary
+Carpinus betulus | wildlife
+Castanea sativa | edible, wildlife
+Catalpa bignonioides | exotic
+Cedrus atlantica | mediterranean
+Cedrus libani | mediterranean
+Cedrus deodara | contemporary
+Celtis australis | mediterranean
+Cercidiphyllum japonicum | japanese
+Cercis siliquastrum | mediterranean, wildlife
+Cercis canadensis | contemporary
+Chamaecyparis lawsoniana | contemporary
+Chamaecyparis obtusa | japanese
+Chamaerops humilis | mediterranean, exotic
+Cordyline australis | exotic, contemporary
+Cornus kousa | japanese
+Cornus florida | cottage
+Corylus colurna | wildlife
+Crataegus laevigata | wildlife, cottage
+Crataegus monogyna | wildlife
+Cryptomeria japonica | japanese
+Cupressus sempervirens | mediterranean, contemporary
+Cupressus arizonica | mediterranean
+Cydonia oblonga | edible, cottage
+Davidia involucrata | woodland
+Diospyros kaki | edible
+Eriobotrya japonica | edible, exotic
+Eucalyptus gunnii | exotic
+Fagus sylvatica | woodland, wildlife
+Ficus carica | edible, mediterranean
+Fraxinus excelsior | wildlife
+Fraxinus ornus | mediterranean, wildlife
+Ginkgo biloba | japanese, contemporary
+Gleditsia triacanthos | contemporary
+Juglans regia | edible
+Koelreuteria paniculata | cottage
+Laburnum anagyroides | cottage
+Lagerstroemia indica | mediterranean
+Larix decidua | woodland
+Laurus nobilis | mediterranean, edible
+Liquidambar styraciflua | contemporary
+Liriodendron tulipifera | woodland
+Magnolia grandiflora | exotic
+Magnolia × soulangeana | cottage, japanese
+Magnolia stellata | japanese
+Malus domestica | edible, cottage, wildlife
+Malus sylvestris | wildlife, edible
+Malus floribunda | cottage, wildlife
+Melia azedarach | mediterranean
+Mespilus germanica | edible
+Metasequoia glyptostroboides | contemporary
+Morus alba | edible
+Morus nigra | edible
+Nyssa sylvatica | woodland
+Olea europaea | mediterranean, edible
+Ostrya carpinifolia | wildlife
+Parrotia persica | contemporary
+Phoenix canariensis | exotic, mediterranean
+Picea abies | woodland
+Picea omorika | contemporary
+Pinus nigra | mediterranean
+Pinus pinea | mediterranean
+Pinus sylvestris | wildlife
+Pinus mugo | japanese
+Pinus thunbergii | japanese
+Pinus parviflora | japanese
+Platanus × hispanica | contemporary
+Populus tremula | wildlife
+Prunus avium | edible, wildlife
+Prunus cerasifera | wildlife, cottage
+Prunus cerasus | edible
+Prunus domestica | edible
+Prunus persica | edible
+Prunus armeniaca | edible, mediterranean
+Prunus dulcis | edible, mediterranean
+Prunus serrulata | japanese, cottage
+Prunus subhirtella | japanese
+Prunus padus | wildlife
+Pyrus communis | edible
+Pyrus calleryana | contemporary
+Pyrus salicifolia | cottage
+Quercus robur | wildlife
+Quercus petraea | wildlife
+Quercus ilex | mediterranean
+Quercus rubra | woodland
+Quercus suber | mediterranean
+Salix alba | wildlife
+Salix babylonica | japanese
+Salix caprea | wildlife
+Sequoiadendron giganteum | contemporary
+Sorbus aucuparia | wildlife
+Sorbus aria | wildlife
+Sorbus domestica | edible
+Sorbus torminalis | wildlife
+Styphnolobium japonicum | japanese
+Styrax japonicus | japanese
+Taxodium distichum | contemporary
+Thuja plicata | contemporary
+Tilia cordata | wildlife
+Tilia platyphyllos | wildlife
+Tilia tomentosa | wildlife
+Trachycarpus fortunei | exotic
+Ulmus minor | wildlife
+Zelkova serrata | japanese
+Abelia × grandiflora | cottage, wildlife
+Acca sellowiana | edible, exotic
+Aronia melanocarpa | edible, wildlife
+Aucuba japonica | woodland
+Berberis thunbergii | contemporary
+Berberis darwinii | wildlife
+Berberis julianae | wildlife
+Betula nana | japanese
+Buxus sempervirens | contemporary, cottage
+Callicarpa bodinieri | cottage
+Callistemon citrinus | exotic, mediterranean
+Calluna vulgaris | wildlife
+Calycanthus floridus | woodland
+Camellia japonica | japanese, woodland
+Camellia sasanqua | japanese
+Caryopteris × clandonensis | wildlife, cottage
+Ceanothus thyrsiflorus | mediterranean, wildlife
+Ceanothus × delilianus | cottage
+Ceratostigma willmottianum | mediterranean
+Chaenomeles speciosa | japanese, edible
+Chimonanthus praecox | woodland
+Choisya ternata | contemporary
+Cistus × purpureus | mediterranean
+Cistus albidus | mediterranean
+Cistus monspeliensis | mediterranean
+Cistus salviifolius | mediterranean
+Clerodendrum trichotomum | exotic
+Clethra alnifolia | woodland, wildlife
+Colutea arborescens | mediterranean
+Convolvulus cneorum | mediterranean
+Cornus alba | contemporary
+Cornus sanguinea | wildlife
+Cornus sericea | contemporary
+Cornus mas | wildlife, edible
+Coronilla valentina | mediterranean
+Corylopsis pauciflora | japanese, woodland
+Corylus avellana | edible, wildlife
+Corylus maxima | edible
+Cotinus coggygria | contemporary
+Cotoneaster franchetii | wildlife
+Cotoneaster lacteus | wildlife
+Cotoneaster horizontalis | wildlife
+Cotoneaster dammeri | contemporary
+Cytisus scoparius | wildlife
+Daphne odora | woodland
+Daphne mezereum | woodland
+Deutzia gracilis | cottage
+Deutzia scabra | cottage
+Elaeagnus × ebbingei | contemporary
+Elaeagnus umbellata | edible, wildlife
+Enkianthus campanulatus | japanese
+Erica carnea | wildlife
+Erica × darleyensis | wildlife
+Escallonia rubra | cottage
+Euonymus alatus | japanese
+Euonymus europaeus | wildlife
+Euonymus fortunei | woodland
+Euonymus japonicus | contemporary
+Exochorda racemosa | cottage
+Fatsia japonica | exotic, woodland
+Forsythia × intermedia | cottage
+Fothergilla major | woodland
+Frangula alnus | wildlife
+Fuchsia magellanica | cottage, woodland
+Garrya elliptica | woodland
+Genista lydia | mediterranean
+Griselinia littoralis | contemporary
+Hamamelis × intermedia | woodland
+Hamamelis mollis | woodland
+Hibiscus syriacus | cottage
+Hippophae rhamnoides | edible, wildlife
+Hydrangea macrophylla | woodland, cottage
+Hydrangea paniculata | cottage
+Hydrangea arborescens | woodland
+Hydrangea quercifolia | woodland
+Hydrangea serrata | japanese, woodland
+Hypericum calycinum | woodland
+Ilex aquifolium | wildlife, woodland
+Ilex crenata | japanese, contemporary
+Indigofera heterantha | wildlife
+Itea virginica | woodland
+Jasminum nudiflorum | cottage
+Juniperus communis | wildlife
+Juniperus horizontalis | contemporary
+Juniperus squamata | contemporary
+Kerria japonica | japanese, woodland
+Kolkwitzia amabilis | cottage
+Lavandula angustifolia | mediterranean, wildlife, cottage
+Lavandula × intermedia | mediterranean, wildlife
+Lavandula stoechas | mediterranean
+Leycesteria formosa | woodland, wildlife
+Ligustrum ovalifolium | contemporary
+Ligustrum vulgare | wildlife
+Ligustrum japonicum | contemporary
+Lonicera nitida | contemporary
+Lonicera fragrantissima | woodland
+Lonicera pileata | woodland
+Lonicera xylosteum | wildlife
+Loropetalum chinense | japanese
+Mahonia aquifolium | woodland, wildlife
+Mahonia × media | woodland
+Myrtus communis | mediterranean
+Nandina domestica | japanese, contemporary
+Nerium oleander | mediterranean
+Osmanthus × burkwoodii | contemporary
+Osmanthus heterophyllus | contemporary
+Osmanthus fragrans | japanese
+Perovskia atriplicifolia | mediterranean, wildlife, contemporary
+Philadelphus coronarius | cottage
+Phlomis fruticosa | mediterranean
+Photinia × fraseri | contemporary
+Physocarpus opulifolius | cottage
+Pieris japonica | japanese, woodland
+Pittosporum tobira | mediterranean
+Pittosporum tenuifolium | contemporary
+Potentilla fruticosa | cottage
+Prunus lusitanica | contemporary
+Prunus spinosa | wildlife, edible
+Prunus tomentosa | edible
+Punica granatum | mediterranean, edible
+Pyracantha coccinea | wildlife
+Rhamnus alaternus | mediterranean
+Rhaphiolepis umbellata | mediterranean
+Rhododendron luteum | woodland
+Rhododendron indicum | japanese
+Ribes sanguineum | cottage, wildlife
+Ribes rubrum | edible
+Ribes nigrum | edible
+Ribes uva-crispa | edible
+Rosa rugosa | wildlife, edible
+Rosa canina | wildlife
+Rosa glauca | cottage
+Rosa gallica | cottage
+Rosmarinus officinalis | mediterranean, edible, wildlife
+Rubus idaeus | edible
+Rubus fruticosus | edible, wildlife
+Ruscus aculeatus | woodland
+Salix purpurea | wildlife
+Salix integra | japanese
+Sambucus nigra | edible, wildlife
+Sambucus racemosa | wildlife
+Santolina chamaecyparissus | mediterranean
+Sarcococca confusa | woodland
+Sarcococca hookeriana | woodland
+Skimmia japonica | japanese, woodland
+Sorbaria sorbifolia | woodland
+Spiraea japonica | cottage
+Spiraea × vanhouttei | cottage
+Spiraea thunbergii | japanese
+Spiraea × arguta | cottage
+Stephanandra incisa | woodland
+Symphoricarpos albus | woodland
+Syringa vulgaris | cottage
+Syringa meyeri | cottage
+Tamarix ramosissima | mediterranean
+Tamarix tetrandra | mediterranean
+Taxus baccata | contemporary, woodland
+Teucrium fruticans | mediterranean
+Vaccinium corymbosum | edible
+Vaccinium myrtillus | edible, woodland
+Viburnum opulus | wildlife
+Viburnum tinus | mediterranean, woodland
+Viburnum lantana | wildlife
+Viburnum × bodnantense | woodland
+Viburnum plicatum | japanese
+Viburnum carlesii | cottage
+Viburnum rhytidophyllum | woodland
+Vitex agnus-castus | mediterranean, wildlife
+Weigela florida | cottage
+Yucca filamentosa | exotic, contemporary
+Yucca gloriosa | exotic, mediterranean
+Actinidia deliciosa | edible, exotic
+Actinidia arguta | edible
+Akebia quinata | japanese
+Bignonia capreolata | exotic
+Campsis radicans | exotic
+Campsis × tagliabuana | exotic
+Clematis montana | cottage
+Clematis armandii | woodland
+Clematis vitalba | wildlife
+Clematis viticella | cottage
+Clematis tangutica | cottage
+Hedera helix | woodland, wildlife
+Hedera hibernica | woodland
+Hydrangea petiolaris | woodland
+Humulus lupulus | edible, wildlife
+Jasminum officinale | cottage
+Lathyrus latifolius | cottage
+Lonicera periclymenum | wildlife, cottage
+Lonicera henryi | woodland
+Parthenocissus quinquefolia | contemporary
+Parthenocissus tricuspidata | contemporary
+Passiflora caerulea | exotic
+Rosa banksiae | cottage, mediterranean
+Schizophragma hydrangeoides | woodland
+Solanum laxum | exotic
+Trachelospermum jasminoides | mediterranean
+Vitis vinifera | edible, mediterranean
+Wisteria sinensis | japanese, cottage
+Wisteria floribunda | japanese
+Acanthus mollis | mediterranean, woodland
+Achillea millefolium | wildlife, cottage
+Achillea filipendulina | cottage
+Aconitum napellus | woodland
+Agapanthus africanus | exotic, mediterranean
+Agastache foeniculum | wildlife
+Ajuga reptans | woodland
+Alcea rosea | cottage
+Alchemilla mollis | cottage, woodland
+Anemone × hybrida | woodland, cottage
+Anemone nemorosa | woodland, wildlife
+Aquilegia vulgaris | cottage, woodland
+Armeria maritima | mediterranean
+Artemisia absinthium | mediterranean
+Artemisia ludoviciana | contemporary
+Aruncus dioicus | woodland
+Asclepias tuberosa | wildlife
+Aster amellus | wildlife, cottage
+Symphyotrichum novae-angliae | wildlife, cottage
+Symphyotrichum novi-belgii | cottage
+Astilbe chinensis | woodland, japanese
+Astrantia major | woodland, cottage
+Aubrieta deltoidea | cottage
+Aurinia saxatilis | mediterranean
+Baptisia australis | cottage
+Bergenia cordifolia | woodland, contemporary
+Brunnera macrophylla | woodland
+Clinopodium nepeta | mediterranean, wildlife
+Campanula persicifolia | cottage
+Campanula portenschlagiana | cottage
+Campanula poscharskyana | cottage
+Campanula glomerata | wildlife
+Canna indica | exotic
+Centaurea montana | cottage
+Centranthus ruber | mediterranean, wildlife
+Cerastium tomentosum | mediterranean
+Convallaria majalis | woodland
+Coreopsis verticillata | cottage
+Coreopsis grandiflora | cottage
+Crocosmia × crocosmiiflora | exotic
+Dahlia pinnata | cottage
+Delphinium elatum | cottage
+Dianthus deltoides | cottage
+Dianthus barbatus | cottage
+Dianthus gratianopolitanus | cottage
+Lamprocapnos spectabilis | woodland, cottage
+Digitalis purpurea | woodland, cottage, wildlife
+Doronicum orientale | woodland
+Echinacea purpurea | wildlife, cottage, contemporary
+Echinops ritro | wildlife, contemporary
+Echium candicans | exotic, mediterranean
+Epimedium × versicolor | woodland
+Erigeron karvinskianus | cottage
+Eryngium planum | contemporary, wildlife
+Eryngium bourgatii | mediterranean, contemporary
+Euphorbia characias | mediterranean, contemporary
+Euphorbia amygdaloides | woodland
+Euphorbia epithymoides | cottage
+Gaillardia × grandiflora | cottage
+Gaura lindheimeri | mediterranean, cottage
+Geranium macrorrhizum | woodland
+Geranium sanguineum | cottage
+Geranium × oxonianum | cottage
+Geranium phaeum | woodland
+Geranium pratense | wildlife, cottage
+Geum coccineum | cottage
+Geum rivale | woodland
+Gypsophila paniculata | cottage
+Helenium autumnale | cottage, wildlife
+Helichrysum italicum | mediterranean
+Helleborus orientalis | woodland
+Helleborus niger | woodland
+Helleborus foetidus | woodland
+Hemerocallis fulva | cottage
+Hemerocallis lilioasphodelus | cottage
+Heuchera micrantha | woodland, contemporary
+Heuchera sanguinea | woodland
+Hosta plantaginea | woodland
+Hosta sieboldiana | woodland, japanese
+Iberis sempervirens | mediterranean
+Iris germanica | cottage, mediterranean
+Iris sibirica | cottage
+Iris pseudacorus | wildlife
+Iris ensata | japanese
+Kniphofia uvaria | exotic
+Lamium maculatum | woodland
+Lathyrus vernus | woodland
+Leucanthemum vulgare | wildlife, cottage
+Leucanthemum × superbum | cottage
+Liatris spicata | wildlife
+Ligularia dentata | woodland
+Linum perenne | mediterranean
+Lobelia cardinalis | cottage
+Lupinus polyphyllus | cottage
+Lysimachia punctata | cottage
+Lythrum salicaria | wildlife
+Malva moschata | wildlife, cottage
+Monarda didyma | wildlife, cottage
+Nepeta × faassenii | wildlife, cottage
+Nepeta racemosa | wildlife
+Oenothera speciosa | mediterranean
+Paeonia lactiflora | cottage
+Paeonia officinalis | cottage
+Papaver orientale | cottage
+Penstemon barbatus | cottage
+Persicaria amplexicaulis | wildlife
+Persicaria affinis | woodland
+Phlomis russeliana | contemporary
+Phlox paniculata | cottage
+Phlox subulata | cottage
+Physostegia virginiana | cottage
+Polemonium caeruleum | cottage
+Polygonatum multiflorum | woodland
+Primula vulgaris | woodland, wildlife
+Primula veris | wildlife
+Primula denticulata | woodland
+Pulmonaria officinalis | woodland, wildlife
+Pulsatilla vulgaris | wildlife
+Rodgersia podophylla | woodland
+Rudbeckia fulgida | cottage, contemporary
+Rudbeckia hirta | cottage
+Salvia nemorosa | wildlife, cottage
+Salvia pratensis | wildlife
+Salvia microphylla | mediterranean
+Salvia greggii | mediterranean
+Salvia officinalis | edible, mediterranean, wildlife
+Santolina rosmarinifolia | mediterranean
+Saponaria officinalis | cottage
+Saxifraga × urbium | woodland
+Scabiosa columbaria | wildlife
+Hylotelephium spectabile | wildlife, contemporary
+Sedum acre | mediterranean
+Sedum album | mediterranean
+Sempervivum tectorum | mediterranean, contemporary
+Sidalcea malviflora | cottage
+Stachys byzantina | cottage, mediterranean
+Betonica officinalis | wildlife
+Tanacetum coccineum | cottage
+Thalictrum aquilegiifolium | woodland
+Tiarella cordifolia | woodland
+Trollius europaeus | woodland
+Verbascum chaixii | cottage
+Verbena bonariensis | wildlife, contemporary
+Veronica spicata | cottage
+Veronica longifolia | cottage
+Veronicastrum virginicum | contemporary, wildlife
+Vinca minor | woodland
+Vinca major | woodland
+Viola odorata | woodland
+Viola cornuta | cottage
+Waldsteinia ternata | woodland
+Zantedeschia aethiopica | exotic
+Allium giganteum | contemporary
+Allium sphaerocephalon | wildlife
+Anemone blanda | woodland
+Camassia leichtlinii | wildlife
+Crocus vernus | wildlife
+Cyclamen hederifolium | woodland
+Cyclamen coum | woodland
+Eranthis hyemalis | woodland
+Erythronium dens-canis | woodland
+Fritillaria meleagris | wildlife
+Galanthus nivalis | woodland
+Hyacinthus orientalis | cottage
+Leucojum aestivum | woodland
+Lilium candidum | cottage
+Lilium regale | cottage
+Muscari armeniacum | cottage, wildlife
+Narcissus pseudonarcissus | woodland, cottage
+Scilla siberica | woodland
+Tulipa gesneriana | cottage
+Briza media | wildlife
+Calamagrostis × acutiflora | contemporary
+Carex morrowii | japanese, woodland
+Carex buchananii | contemporary
+Deschampsia cespitosa | contemporary
+Fargesia murielae | japanese
+Fargesia nitida | japanese
+Festuca glauca | contemporary, mediterranean
+Hakonechloa macra | japanese, woodland
+Liriope muscari | woodland
+Luzula sylvatica | woodland
+Miscanthus sinensis | contemporary, japanese
+Molinia caerulea | contemporary
+Nassella tenuissima | contemporary, mediterranean
+Ophiopogon japonicus | japanese
+Ophiopogon planiscapus | japanese, contemporary
+Panicum virgatum | contemporary
+Cenchrus alopecuroides | contemporary
+Sesleria autumnalis | contemporary
+Stipa gigantea | contemporary, mediterranean
+Phormium tenax | exotic, contemporary
+Musa basjoo | exotic
+Adiantum pedatum | woodland
+Asplenium scolopendrium | woodland
+Athyrium filix-femina | woodland
+Blechnum spicant | woodland
+Dryopteris filix-mas | woodland
+Matteuccia struthiopteris | woodland
+Osmunda regalis | woodland
+Polypodium vulgare | woodland
+Polystichum setiferum | woodland
+Dicksonia antarctica | exotic, woodland
+Acaena microphylla | contemporary
+Arctostaphylos uva-ursi | wildlife
+Fragaria vesca | edible, woodland, wildlife
+Lysimachia nummularia | woodland
+Pachysandra terminalis | woodland, japanese
+Soleirolia soleirolii | japanese, woodland
+Thymus serpyllum | mediterranean, wildlife
+Thymus praecox | mediterranean
+Allium schoenoprasum | edible, wildlife
+Allium cepa | edible
+Allium sativum | edible
+Allium porrum | edible
+Anethum graveolens | edible
+Artemisia dracunculus | edible
+Asparagus officinalis | edible
+Beta vulgaris | edible
+Borago officinalis | edible, wildlife
+Brassica oleracea | edible
+Calendula officinalis | edible, cottage, wildlife
+Capsicum annuum | edible
+Coriandrum sativum | edible
+Cucumis sativus | edible
+Cucurbita pepo | edible
+Cucurbita maxima | edible
+Cynara cardunculus | edible, contemporary
+Daucus carota | edible
+Foeniculum vulgare | edible, wildlife
+Fragaria × ananassa | edible
+Hyssopus officinalis | mediterranean, wildlife
+Lactuca sativa | edible
+Levisticum officinale | edible
+Melissa officinalis | edible, wildlife
+Mentha spicata | edible
+Mentha × piperita | edible
+Ocimum basilicum | edible
+Origanum vulgare | edible, wildlife, mediterranean
+Origanum majorana | edible, mediterranean
+Petroselinum crispum | edible
+Phaseolus vulgaris | edible
+Pisum sativum | edible
+Raphanus sativus | edible
+Rheum rhabarbarum | edible
+Satureja montana | edible, mediterranean
+Solanum lycopersicum | edible
+Solanum melongena | edible
+Solanum tuberosum | edible
+Spinacia oleracea | edible
+Thymus vulgaris | edible, mediterranean, wildlife
+Tropaeolum majus | edible, cottage
+Zea mays | edible
+Centaurea cyanus | wildlife, cottage
+Cosmos bipinnatus | cottage, wildlife
+Eschscholzia californica | mediterranean, cottage
+Helianthus annuus | cottage, wildlife, edible
+Lathyrus odoratus | cottage
+Lobularia maritima | cottage, wildlife
+Nigella damascena | cottage
+Papaver rhoeas | wildlife, cottage
+Tagetes patula | edible, cottage
+Zinnia elegans | cottage
+Lunaria annua | cottage, woodland
+Myosotis sylvatica | woodland, cottage
+Erysimum cheiri | cottage
+Phacelia tanacetifolia | wildlife
+Cleome hassleriana | exotic
+Agave americana | exotic, mediterranean, contemporary
+Aloysia citrodora | edible, mediterranean
+Anisodontea capensis | mediterranean
+Brachyglottis greyi | contemporary
+Cotoneaster salicifolius | woodland
+Erigeron glaucus | mediterranean
+Euryops pectinatus | mediterranean
+Hebe salicifolia | contemporary
+Leucophyllum frutescens | mediterranean
+Melianthus major | exotic
+Westringia fruticosa | mediterranean
+Abutilon megapotamicum | exotic
+Dasylirion longissimum | exotic, contemporary
+Beschorneria yuccoides | exotic
+Chusquea culeou | exotic, japanese
+Ensete ventricosum | exotic
+Hedychium gardnerianum | exotic
+Schefflera taiwaniana | exotic
+Tetrapanax papyrifer | exotic
+Aspidistra elatior | woodland, exotic
+Acer shirasawanum | japanese
+Disporum smilacinum | woodland
+Kirengeshoma palmata | woodland, japanese
+Pleioblastus pygmaeus | japanese
+Sasa veitchii | japanese, woodland
+Tricyrtis hirta | woodland, japanese
+Hosta fortunei | woodland
+Hosta undulata | woodland
+Polygonatum odoratum | woodland
+Sanguisorba officinalis | wildlife
+Thymus citriodorus | edible
+Vaccinium vitis-idaea | edible, woodland
+Gaultheria procumbens | woodland
+Microbiota decussata | contemporary
+Picea glauca | contemporary
+Abies koreana | contemporary
+Abies nordmanniana | contemporary
+Pinus strobus | contemporary
+Tsuga canadensis | woodland
+Cephalotaxus harringtonia | woodland
